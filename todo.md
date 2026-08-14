@@ -79,3 +79,9 @@
 - [x] Add a professional hover-lift response to both hero action buttons.
 - [x] Add a subtle hover animation to the header logo.
 - [x] Preserve reduced-motion accessibility and verify interaction behavior.
+
+## Final usability finishing pass
+
+- [x] Add active-section feedback to the header navigation.
+- [x] Add a compact professional contact cue in the hero.
+- [x] Verify the finishing details at desktop and mobile widths.

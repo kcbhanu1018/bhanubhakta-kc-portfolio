@@ -112,6 +112,7 @@ function InspectionRule({ label }: { label?: string }) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
@@ -135,6 +136,18 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const observedSections = navItems
+      .map(([, id]) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && setActiveSection(entry.target.id)),
+      { rootMargin: "-28% 0px -62% 0px", threshold: 0.01 },
+    );
+    observedSections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F3F0EA] text-[#142B42] selection:bg-[#D4A64A] selection:text-[#142B42]">
       <header className={`fixed inset-x-0 top-0 z-50 px-3 transition-[padding] duration-300 sm:px-5 ${scrolled ? "pt-2.5 sm:pt-3" : "pt-3 sm:pt-5"}`}>
@@ -145,7 +158,7 @@ export default function Home() {
 
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
             {navItems.map(([label, id]) => (
-              <a key={id} href={`#${id}`} className="nav-link text-[0.67rem] font-bold uppercase tracking-[0.15em] text-[#395161]">
+              <a key={id} href={`#${id}`} className={`nav-link text-[0.67rem] font-bold uppercase tracking-[0.15em] text-[#395161] ${activeSection === id ? "nav-link-active" : ""}`}>
                 {label}
               </a>
             ))}
@@ -169,7 +182,7 @@ export default function Home() {
           <div className={`mx-auto mt-2 max-w-[1440px] rounded-xl border px-5 py-5 backdrop-blur-xl shadow-[0_12px_28px_rgba(22,43,58,0.1)] lg:hidden ${scrolled ? "border-white/45 bg-[#EEF3EF]/80" : "border-[#D3DBD5]/90 bg-[#E7EEE9]/95"}`}>
             <nav className="grid gap-1" aria-label="Mobile navigation">
               {navItems.map(([label, id]) => (
-                <a key={id} href={`#${id}`} onClick={closeMenu} className="flex items-center justify-between border-b border-[#D8D7D0] py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#173A52]">
+                <a key={id} href={`#${id}`} onClick={closeMenu} className={`flex items-center justify-between border-b border-[#D8D7D0] py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#173A52] ${activeSection === id ? "text-[#8D661F]" : ""}`}>
                   {label} <ChevronRight size={16} className="text-[#D4A64A]" />
                 </a>
               ))}
@@ -209,6 +222,7 @@ export default function Home() {
                   Download résumé <Download size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </a>
               </div>
+              <a href="#contact" className="hero-contact-cue mt-6 inline-flex items-center gap-2 text-[0.64rem] font-bold uppercase tracking-[0.14em] text-[#DCE7EA] transition hover:text-[#F2CC79]"><span className="grid h-5 w-5 place-items-center rounded-full border border-[#E5BB63]/80 text-[#E5BB63]"><Mail size={11} /></span> Direct contact · Abu Dhabi, UAE <ArrowUpRight size={13} /></a>
             </div>
 
           </div>
