@@ -130,19 +130,14 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F3F0EA] text-[#142B42] selection:bg-[#D4A64A] selection:text-[#142B42]">
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between border border-white/20 bg-[#173A52]/92 px-4 py-3 text-[#F7F4ED] shadow-[0_18px_40px_rgba(33,65,82,0.18)] backdrop-blur-md sm:px-5">
-          <a href="#top" className="flex items-center gap-3" aria-label="Go to top">
-            <img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="Bhanubhakta KC logo" className="h-12 w-16 object-contain sm:h-14 sm:w-20" />
-            <span className="header-signature leading-none">
-              <small className="block text-[0.54rem] font-extrabold uppercase tracking-[0.2em] text-[#D4A64A]">Housekeeping operations</small>
-              <strong className="mt-1 block font-display text-[1.25rem] font-normal tracking-[-0.02em] text-[#F7F4ED]">Bhanubhakta <i className="text-[#E5BB63]">KC</i></strong>
-              <span className="mt-1 flex items-center gap-1.5 text-[0.5rem] font-bold uppercase tracking-[0.16em] text-[#AEBEC7]"><span className="h-1 w-1 bg-[#D4A64A]" /> Senior supervisor</span>
-            </span>
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between border border-[#D8D7D0] bg-[#FAF9F5]/95 px-4 py-2.5 text-[#142B42] shadow-[0_12px_28px_rgba(22,43,58,0.1)] backdrop-blur-md sm:px-5">
+          <a href="#top" className="flex items-center" aria-label="Go to top">
+            <img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="Bhanubhakta KC logo" className="h-12 w-16 object-contain sm:h-14 sm:w-[5.25rem]" />
           </a>
 
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
             {navItems.map(([label, id]) => (
-              <a key={id} href={`#${id}`} className="nav-link text-[0.67rem] font-bold uppercase tracking-[0.15em] text-[#DCE3E4]">
+              <a key={id} href={`#${id}`} className="nav-link text-[0.67rem] font-bold uppercase tracking-[0.15em] text-[#395161]">
                 {label}
               </a>
             ))}
@@ -154,7 +149,7 @@ export default function Home() {
 
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center border border-white/20 text-[#F7F4ED] lg:hidden"
+            className="grid h-10 w-10 place-items-center border border-[#C7CFCB] text-[#173A52] lg:hidden"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((open) => !open)}
@@ -163,10 +158,10 @@ export default function Home() {
           </button>
         </div>
         {menuOpen && (
-          <div className="mx-auto max-w-[1440px] border-x border-b border-white/10 bg-[#10263C] px-5 py-5 lg:hidden">
+          <div className="mx-auto max-w-[1440px] border-x border-b border-[#D8D7D0] bg-[#FAF9F5] px-5 py-5 shadow-[0_12px_28px_rgba(22,43,58,0.1)] lg:hidden">
             <nav className="grid gap-1" aria-label="Mobile navigation">
               {navItems.map(([label, id]) => (
-                <a key={id} href={`#${id}`} onClick={closeMenu} className="flex items-center justify-between border-b border-white/10 py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#F7F4ED]">
+                <a key={id} href={`#${id}`} onClick={closeMenu} className="flex items-center justify-between border-b border-[#D8D7D0] py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#173A52]">
                   {label} <ChevronRight size={16} className="text-[#D4A64A]" />
                 </a>
               ))}
@@ -179,15 +174,16 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="hero-depth relative overflow-hidden pt-28 sm:pt-32">
-          <div className="relative mx-auto grid max-w-[1440px] items-center gap-9 px-5 pb-14 sm:px-8 sm:pb-16 lg:min-h-[650px] lg:grid-cols-[minmax(0,0.56fr)_minmax(360px,0.44fr)] lg:gap-16 lg:px-12 lg:py-16">
+        <section className="hero-depth relative min-h-[660px] overflow-hidden pt-28 sm:min-h-[700px] sm:pt-32">
+          <img src="/manus-storage/bhanubhakta-hero_c4e16ab6.jpg" alt="Premium facility corridor representing housekeeping operations and service quality" className="hero-image absolute inset-0 h-full w-full object-cover" />
+          <div className="hero-overlay absolute inset-0" />
+          <div className="relative mx-auto flex min-h-[560px] max-w-[1440px] items-end px-5 pb-14 sm:min-h-[590px] sm:px-8 sm:pb-16 lg:min-h-[620px] lg:px-12 lg:pb-20">
             <div className="z-10 max-w-4xl">
-              <img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="BK logo" className="mb-5 h-16 w-24 object-contain object-left sm:h-20 sm:w-28" />
               <div className="mb-6 flex items-center gap-3 text-[#E5BB63]">
                 <span className="h-1.5 w-1.5 rounded-full bg-current" />
                 <span className="text-[0.64rem] font-bold uppercase tracking-[0.2em]">Housekeeping operations · Facility services</span>
               </div>
-              <h1 className="max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold leading-[0.92] tracking-[-0.065em] text-[#F7F4ED]">
+              <h1 className="max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold leading-[0.92] tracking-[-0.065em] text-white">
                 Bhanubhakta <span className="text-[#E5BB63]">KC</span>
               </h1>
               <div className="mt-7 flex max-w-xl items-center gap-3">
@@ -201,19 +197,12 @@ export default function Home() {
                 <a href="#experience" className="group flex items-center justify-center gap-3 bg-[#D4A64A] px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-[#10263C] transition hover:bg-[#F2CC79] active:scale-[0.97]">
                   View experience <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </a>
-                <a href="/manus-storage/Bhanubhakta_KC_Resume_d682a5d8.pdf" target="_blank" rel="noreferrer" className="group flex items-center justify-center gap-3 border border-white/35 px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-[#F7F4ED] transition hover:border-[#D4A64A] hover:text-[#D4A64A] active:scale-[0.97]">
+                <a href="/manus-storage/Bhanubhakta_KC_Resume_d682a5d8.pdf" target="_blank" rel="noreferrer" className="group flex items-center justify-center gap-3 border border-white/60 bg-white/10 px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-white transition hover:border-[#F2CC79] hover:bg-white/20 hover:text-[#F2CC79] active:scale-[0.97]">
                   Download résumé <Download size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </a>
               </div>
             </div>
 
-            <aside className="relative h-[285px] sm:h-[380px] lg:h-[485px]">
-              <figure className="hero-visual-card relative h-full overflow-hidden rounded-2xl border border-white/15 shadow-[0_24px_50px_rgba(4,24,38,0.25)]">
-                <img src="/manus-storage/bhanubhakta-hero_c4e16ab6.jpg" alt="Immaculate premium facility corridor demonstrating operational standards" className="h-full w-full object-cover object-[62%_center]" />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,44,0.04)_35%,rgba(7,28,44,0.78)_100%)]" />
-                <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5 text-[#F7F4ED] sm:p-6"><span><span className="block text-[0.56rem] font-extrabold uppercase tracking-[0.18em] text-[#E5BB63]">Professional focus</span><span className="mt-1 block font-display text-xl">Standards that stay visible.</span></span><span className="border border-white/30 px-2.5 py-1 text-[0.55rem] font-bold uppercase tracking-[0.15em]">Abu Dhabi</span></figcaption>
-              </figure>
-            </aside>
           </div>
         </section>
 
@@ -279,7 +268,7 @@ export default function Home() {
 
         <section className="bg-[#E8E4DA] px-5 py-8 sm:px-8 lg:px-12">
           <div className="mx-auto flex max-w-[1440px] flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-4"><img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="Bhanubhakta KC logo" className="h-14 w-20 object-contain" /><p className="max-w-xl text-sm leading-6 text-[#415464]">A considered approach to cleanliness, compliance, and continuity across demanding environments.</p></div>
+            <div className="flex items-center gap-4"><BadgeCheck size={21} className="shrink-0 text-[#A37624]" /><p className="max-w-xl text-sm leading-6 text-[#415464]">A considered approach to cleanliness, compliance, and continuity across demanding environments.</p></div>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-[0.63rem] font-bold uppercase tracking-[0.17em] text-[#40566A]"><span>High-security facilities</span><span>Luxury hospitality</span><span>Team leadership</span></div>
           </div>
         </section>

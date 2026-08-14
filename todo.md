@@ -52,3 +52,11 @@
 - [x] Confirm direct phone dial and default-email actions from contact links.
 - [x] Add restrained hover and section-reveal animation without visual clutter.
 - [x] Review the final experience at desktop, tablet, and mobile widths.
+
+## Final header and hero refinement
+
+- [x] Limit the supplied BK logo to the header and footer.
+- [x] Use the facility visual as a brighter full-bleed hero background.
+- [x] Improve header background, logo lockup, and visual hierarchy.
+- [x] Rebalance hero text color and overlay for comfortable readability.
+- [x] Verify the revised header and hero at desktop and mobile widths.
