@@ -99,3 +99,10 @@
 - [x] Translate portfolio navigation, headings, explanatory copy, actions, and interface labels into Nepali.
 - [x] Preserve the name, address, social details, and technical terms in their original language.
 - [x] Verify bilingual content, switching behavior, and responsive layout at desktop and mobile widths.
+
+## Section hierarchy and education layout
+
+- [x] Increase the scale and contrast of numbered section labels across Profile, Career, Capabilities, Credentials, and Education.
+- [x] Move Education into its own distinct section rather than keeping it inside Credentials.
+- [x] Preserve English/Nepali language switching for the revised section content.
+- [x] Verify the redesigned section hierarchy at desktop and mobile widths.

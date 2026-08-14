@@ -32,6 +32,7 @@ const navItems = [
   ["Experience", "experience"],
   ["Capabilities", "capabilities"],
   ["Credentials", "credentials"],
+  ["Education", "education"],
   ["Contact", "contact"],
 ] as const;
 
@@ -118,7 +119,8 @@ const nepaliCopy: Record<string, string> = {
   "02 / Career record": "०२ / करियर विवरण", "Experience that holds the standard.": "मापदण्ड कायम राख्ने अनुभव।", "From energy infrastructure to luxury guest spaces, the work is grounded in consistent service, safe systems, and teams that know what excellent looks like.": "ऊर्जा पूर्वाधारदेखि लक्जरी अतिथि क्षेत्रसम्म, काम निरन्तर सेवा, सुरक्षित प्रणाली र उत्कृष्टताको अर्थ बुझ्ने टोलीमा आधारित छ।",
   "03 / Core capabilities": "०३ / मुख्य क्षमताहरू", "The practical toolkit behind reliable delivery.": "भरपर्दो सेवाको पछाडि रहेको व्यावहारिक उपकरणसमूह।", "Review full résumé": "पूरा रिजुमे हेर्नुहोस्",
   "Operating principles": "सञ्चालनका सिद्धान्तहरू", "High standards start with systems.": "उच्च मापदण्ड प्रणालीबाट सुरु हुन्छ।", "Every role has strengthened the same principle: the best guest and workplace experiences are created when safety, stock, schedules, and service are all given equal attention.": "हरेक भूमिकाले एउटै सिद्धान्तलाई बलियो बनाएको छ: सुरक्षा, स्टक, समयतालिका र सेवालाई समान ध्यान दिँदा उत्कृष्ट अतिथि र कार्यस्थल अनुभव सिर्जना हुन्छ।",
-  "04 / Credentials & education": "०४ / प्रमाणपत्र र शिक्षा", "Standards backed by training.": "तालिमद्वारा समर्थित मापदण्डहरू।", "Verified learning": "प्रमाणित सिकाइ", "Education": "शिक्षा", "Languages": "भाषाहरू", "Credential": "प्रमाणपत्र",
+  "04 / Credentials": "०४ / प्रमाणपत्रहरू", "Standards backed by training.": "तालिमद्वारा समर्थित मापदण्डहरू।", "Verified learning": "प्रमाणित सिकाइ", "Education": "शिक्षा", "Languages": "भाषाहरू", "Credential": "प्रमाणपत्र",
+  "05 / Education": "०५ / शिक्षा", "Academic foundations for practical leadership.": "व्यावहारिक नेतृत्वका लागि शैक्षिक आधार।", "Academic record": "शैक्षिक विवरण", "06 / Contact": "०६ / सम्पर्क",
   "A professional ethic": "व्यावसायिक नैतिकता", "“A clean environment is never accidental. It is the visible result of people, process, and pride working together.”": "“स्वच्छ वातावरण कहिल्यै संयोगले बन्दैन। यो मानिस, प्रक्रिया र गर्वले सँगै काम गरेको देखिने परिणाम हो।”",
   "05 / Contact": "०५ / सम्पर्क", "Let’s discuss a stronger standard of operations.": "अझ बलियो सञ्चालन मापदण्डबारे छलफल गरौँ।", "Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.": "UAE र अन्य स्थानमा हाउसकिपिङ नेतृत्व, सुविधा सञ्चालन र सेवा-गुणस्तरका अवसरबारे सम्पर्क गर्न उपलब्ध।", "Email": "इमेल", "Phone": "फोन", "Location": "स्थान",
   "Housekeeping Operations": "हाउसकिपिङ सञ्चालन", "All rights reserved.": "सर्वाधिकार सुरक्षित।", "Back to top": "माथि जानुहोस्",
@@ -318,7 +320,7 @@ export default function Home() {
         <section id="profile" className="reveal-on-scroll relative bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:gap-20">
             <div>
-              <p className="eyebrow">{t("01 / Professional profile")}</p>
+              <p className="eyebrow section-kicker">{t("01 / Professional profile")}</p>
               <h2 className="section-title mt-5">{t("Built for the details that make a facility work.")}</h2>
               <InspectionRule label={t("Operational standard")} />
             </div>
@@ -359,7 +361,7 @@ export default function Home() {
           <div className="relative mx-auto max-w-[1440px]">
             <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20">
               <div>
-                <p className="eyebrow text-[#D4A64A]">{t("02 / Career record")}</p>
+                <p className="eyebrow section-kicker text-[#D4A64A]">{t("02 / Career record")}</p>
                 <h2 className="section-title mt-5 text-[#F7F4ED]">{t("Experience that holds the standard.")}</h2>
                 <p className="mt-6 max-w-sm border-l border-[#B78428] pl-4 text-sm leading-7 text-[#405B6B]">{t("From energy infrastructure to luxury guest spaces, the work is grounded in consistent service, safe systems, and teams that know what excellent looks like.")}</p>
               </div>
@@ -388,7 +390,7 @@ export default function Home() {
         <section id="capabilities" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
             <div>
-              <p className="eyebrow">{t("03 / Core capabilities")}</p>
+              <p className="eyebrow section-kicker">{t("03 / Core capabilities")}</p>
               <h2 className="section-title mt-5">{t("The practical toolkit behind reliable delivery.")}</h2>
               <a href="/manus-storage/Bhanubhakta_KC_Resume_d682a5d8.pdf" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 border-b border-[#D4A64A] pb-2 text-[0.67rem] font-extrabold uppercase tracking-[0.14em] text-[#142B42] transition hover:text-[#B48224]">{t("Review full résumé")} <ArrowUpRight size={15} /></a>
             </div>
@@ -416,16 +418,9 @@ export default function Home() {
         <section id="credentials" className="reveal-on-scroll bg-[#E8E4DA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.39fr_0.61fr] lg:gap-20">
             <div>
-              <p className="eyebrow">{t("04 / Credentials & education")}</p>
+              <p className="eyebrow section-kicker">{t("04 / Credentials")}</p>
               <h2 className="section-title mt-5">{t("Standards backed by training.")}</h2>
               <InspectionRule label={t("Verified learning")} />
-              <div className="mt-10 border-l-2 border-[#D4A64A] pl-5">
-                <p className="text-[0.64rem] font-bold uppercase tracking-[0.17em] text-[#6B7B82]">{t("Education")}</p>
-                <p className="mt-3 font-display text-xl text-[#142B42]">12th Intermediate</p>
-                <p className="mt-1 text-sm leading-6 text-[#566973]">Saraswati Higher Secondary School, Nepal · 2017</p>
-                <p className="mt-5 font-display text-xl text-[#142B42]">10th Grade (SLC)</p>
-                <p className="mt-1 text-sm leading-6 text-[#566973]">Birendra Secondary School, Nepal · 2015</p>
-              </div>
               <div className="mt-9 flex items-start gap-3 border-t border-[#C7C6BD] pt-6"><Languages size={20} className="mt-0.5 text-[#A37624]" /><div><p className="text-[0.64rem] font-bold uppercase tracking-[0.17em] text-[#6B7B82]">{t("Languages")}</p><p className="mt-2 text-sm leading-6 text-[#405664]">English (Fluent/B1) · Hindi (Fluent) · Nepali (Native)</p></div></div>
             </div>
             <div className="grid gap-3 lg:pt-10">
@@ -439,6 +434,20 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="education" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+          <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
+            <div>
+              <p className="eyebrow section-kicker">{t("05 / Education")}</p>
+              <h2 className="section-title mt-5">{t("Academic foundations for practical leadership.")}</h2>
+              <InspectionRule label={t("Academic record")} />
+            </div>
+            <div className="grid gap-4 lg:pt-8">
+              <article className="education-card rounded-[1.15rem] border border-[#CBD7D3] bg-[#FBFCF9] p-6 sm:p-7"><span className="text-[0.62rem] font-extrabold uppercase tracking-[0.18em] text-[#A37624]">01</span><h3 className="mt-4 font-display text-3xl leading-tight text-[#142B42]">12th Intermediate</h3><p className="mt-3 text-base leading-7 text-[#566973]">Saraswati Higher Secondary School, Nepal · 2017</p></article>
+              <article className="education-card rounded-[1.15rem] border border-[#CBD7D3] bg-[#FBFCF9] p-6 sm:p-7"><span className="text-[0.62rem] font-extrabold uppercase tracking-[0.18em] text-[#A37624]">02</span><h3 className="mt-4 font-display text-3xl leading-tight text-[#142B42]">10th Grade (SLC)</h3><p className="mt-3 text-base leading-7 text-[#566973]">Birendra Secondary School, Nepal · 2015</p></article>
+            </div>
+          </div>
+        </section>
+
         <section className="relative min-h-[540px] overflow-hidden bg-[#10263C] px-5 py-20 text-[#F7F4ED] sm:px-8 lg:px-12 lg:py-28">
           <img src="/manus-storage/bhanubhakta-standard_8a6edfb4.jpg" alt="Precision hospitality details" className="absolute inset-y-0 right-0 h-full w-full object-cover object-left opacity-35 lg:w-[54%]" />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,38,60,1)_0%,rgba(16,38,60,0.96)_46%,rgba(16,38,60,0.26)_100%)]" />
@@ -447,7 +456,7 @@ export default function Home() {
 
         <section id="contact" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.5fr_0.5fr] lg:gap-20">
-            <div><p className="eyebrow">{t("05 / Contact")}</p><h2 className="section-title mt-5 max-w-xl">{t("Let’s discuss a stronger standard of operations.")}</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#536772]">{t("Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.")}</p></div>
+            <div><p className="eyebrow section-kicker">{t("06 / Contact")}</p><h2 className="section-title mt-5 max-w-xl">{t("Let’s discuss a stronger standard of operations.")}</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#536772]">{t("Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.")}</p></div>
             <div className="contact-wallet border-t-2 border-[#142B42] pt-2">
               <a href="mailto:bhanubhakta622@gmail.com" onClick={(event) => runContactAction(event, "mailto:bhanubhakta622@gmail.com", "email")} aria-label="Send an email to Bhanubhakta KC" title="Open your default email application" className={`contact-wallet-card group flex items-center gap-4 ${openingContact === "email" ? "is-opening" : ""}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#F3E2B7] text-[#8D661F]"><Mail size={20} /></span><span className="min-w-0 flex-1"><span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">{t("Email")}</span><strong className="mt-1 block break-all font-display text-xl font-normal text-[#142B42] sm:text-2xl">bhanubhakta622@gmail.com</strong></span><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
               <a href="tel:+971545435736" onClick={(event) => runContactAction(event, "tel:+971545435736", "phone")} aria-label="Call Bhanubhakta KC at +971 54 543 5736" title="Open your phone dialer" className={`contact-wallet-card group flex items-center gap-4 ${openingContact === "phone" ? "is-opening" : ""}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#DCE9E8] text-[#28566B]"><Phone size={20} /></span><span className="flex-1"><span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">{t("Phone")}</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42] sm:text-2xl">+971 54 543 5736</strong></span><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
