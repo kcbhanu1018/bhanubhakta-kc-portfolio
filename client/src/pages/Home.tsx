@@ -202,10 +202,10 @@ export default function Home() {
                 Housekeeping operations leader with experience across high-security facilities and luxury hospitality environments. Focused on reliable standards, practical leadership, continuous learning, and measurable service quality.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a href="#experience" className="group flex items-center justify-center gap-3 bg-[#D4A64A] px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-[#10263C] transition hover:bg-[#F2CC79] active:scale-[0.97]">
+                <a href="#experience" className="group flex items-center justify-center gap-3 rounded-xl bg-[#D4A64A] px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-[#10263C] transition hover:bg-[#F2CC79] active:scale-[0.97]">
                   View experience <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </a>
-                <a href="/manus-storage/Bhanubhakta_KC_Resume_d682a5d8.pdf" target="_blank" rel="noreferrer" className="group flex items-center justify-center gap-3 border border-white/60 bg-white/10 px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-white transition hover:border-[#F2CC79] hover:bg-white/20 hover:text-[#F2CC79] active:scale-[0.97]">
+                <a href="/manus-storage/Bhanubhakta_KC_Resume_d682a5d8.pdf" target="_blank" rel="noreferrer" className="group flex items-center justify-center gap-3 rounded-xl border border-white/60 bg-white/10 px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-white transition hover:border-[#F2CC79] hover:bg-white/20 hover:text-[#F2CC79] active:scale-[0.97]">
                   Download résumé <Download size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </a>
               </div>
@@ -215,7 +215,7 @@ export default function Home() {
         </section>
 
         <section className="social-ledger bg-[#F4F0E8] px-5 py-9 text-[#142B42] sm:px-8 lg:px-11" aria-label="Social media presence">
-          <div className="mx-auto grid max-w-[1440px] overflow-hidden border border-[#C6D1D0] bg-[#FCFBF7] shadow-[0_18px_38px_rgba(28,60,75,0.08)] lg:grid-cols-[0.28fr_0.72fr] lg:items-stretch">
+          <div className="mx-auto grid max-w-[1440px] overflow-hidden rounded-[1.35rem] border border-[#C6D1D0] bg-[#FCFBF7] shadow-[0_18px_38px_rgba(28,60,75,0.08)] lg:grid-cols-[0.28fr_0.72fr] lg:items-stretch">
             <div>
               <div className="h-full border-b border-[#C6D1D0] bg-[linear-gradient(135deg,#F2D28D_0%,#E5B85D_100%)] px-6 py-6 lg:border-b-0 lg:border-r lg:px-8 lg:py-7">
                 <p className="text-[0.6rem] font-extrabold uppercase tracking-[0.19em] text-[#29475B]">Connected community</p>
@@ -262,7 +262,7 @@ export default function Home() {
                 ].map(([Icon, title, copy]) => {
                   const IconComponent = Icon as typeof ShieldCheck;
                   return (
-                    <article key={title as string} className="group border border-[#CBD0CF] bg-[#F9F7F2] p-5 transition duration-200 hover:-translate-y-1 hover:border-[#D4A64A] hover:shadow-[0_16px_30px_rgba(26,53,70,0.08)]">
+                    <article key={title as string} className="group rounded-[1.15rem] border border-[#CBD0CF] bg-[#F9F7F2] p-5 transition duration-200 hover:-translate-y-1 hover:border-[#D4A64A] hover:shadow-[0_16px_30px_rgba(26,53,70,0.08)]">
                       <IconComponent size={22} className="text-[#B48224]" strokeWidth={1.8} />
                       <h3 className="mt-5 text-sm font-extrabold uppercase tracking-[0.09em] text-[#142B42]">{title as string}</h3>
                       <p className="mt-2 text-sm leading-6 text-[#5E6E78]">{copy as string}</p>
@@ -292,7 +292,7 @@ export default function Home() {
               </div>
               <div className="border-t border-[#8FA5AD]">
                 {experience.map((job, index) => (
-                  <article key={job.company} className="group grid gap-5 border-b border-[#A7BBC0] py-8 transition duration-200 hover:bg-white/70 sm:grid-cols-[138px_1fr] sm:gap-8 sm:px-4 lg:py-10 lg:px-5">
+                  <article key={job.company} className="group my-2 grid gap-5 rounded-[1.15rem] border border-transparent py-8 transition duration-200 hover:border-[#C8D5D3] hover:bg-white/70 sm:grid-cols-[138px_1fr] sm:gap-8 sm:px-4 lg:py-10 lg:px-5">
                     <div>
                       <p className="inline-block border-b border-[#B78428] pb-1 text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-[#8D661F]">{job.period}</p>
                       <p className="mt-3 flex items-center gap-2 text-xs leading-5 text-[#4F6876]"><MapPin size={13} className="shrink-0 text-[#A37624]" /> {job.location}</p>
@@ -321,7 +321,7 @@ export default function Home() {
             </div>
             <div className="border-t border-[#BFC7C6]">
               {capabilities.map((capability, index) => (
-                <div key={capability} className="group flex items-center justify-between gap-5 border-b border-[#BFC7C6] py-4 sm:py-5">
+                <div key={capability} className="group my-1 flex items-center justify-between gap-5 rounded-xl border border-transparent px-3 py-4 transition hover:border-[#CAD6D2] hover:bg-white/50 sm:px-4 sm:py-5">
                   <span className="text-[0.62rem] font-bold tracking-[0.14em] text-[#A37624]">{String(index + 1).padStart(2, "0")}</span>
                   <p className="flex-1 font-display text-[1.35rem] leading-tight text-[#25415A] transition group-hover:translate-x-1 group-hover:text-[#142B42] sm:text-[1.7rem]">{capability}</p>
                   <ArrowUpRight size={18} className="text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" />
@@ -357,8 +357,8 @@ export default function Home() {
             </div>
             <div className="grid gap-3 lg:pt-10">
               {certifications.map(([name, issuer], index) => (
-                <article key={name} className="flex gap-5 border border-[#C7C6BD] bg-[#F5F2EC] p-5 transition hover:-translate-y-1 hover:border-[#D4A64A] hover:shadow-[0_14px_28px_rgba(24,48,63,0.08)] sm:items-center sm:p-6">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center border border-[#D4A64A] text-[#A37624]"><Award size={21} strokeWidth={1.7} /></div>
+                <article key={name} className="flex gap-5 rounded-[1.15rem] border border-[#C7C6BD] bg-[#F5F2EC] p-5 transition hover:-translate-y-1 hover:border-[#D4A64A] hover:shadow-[0_14px_28px_rgba(24,48,63,0.08)] sm:items-center sm:p-6">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-[#D4A64A] text-[#A37624]"><Award size={21} strokeWidth={1.7} /></div>
                   <div className="min-w-0 flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#A37624]">Credential / 0{index + 1}</p><h3 className="mt-2 font-display text-xl leading-tight text-[#142B42] sm:text-2xl">{name}</h3><p className="mt-2 text-sm leading-6 text-[#5C6E76]">{issuer}</p></div>
                 </article>
               ))}
@@ -376,9 +376,9 @@ export default function Home() {
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.5fr_0.5fr] lg:gap-20">
             <div><p className="eyebrow">05 / Contact</p><h2 className="section-title mt-5 max-w-xl">Let’s discuss a stronger standard of operations.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#536772]">Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.</p></div>
             <div className="border-t-2 border-[#142B42]">
-              <a href="mailto:bhanubhakta622@gmail.com" aria-label="Send an email to Bhanubhakta KC" title="Open your default email application" className="contact-action group flex items-center gap-4 border-b border-[#BFC7C6] py-6 transition hover:bg-[#E8E4DA] sm:px-2"><Mail size={22} className="text-[#A37624]" /><div className="min-w-0 flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Email</p><p className="mt-1 break-all font-display text-xl text-[#142B42] sm:text-2xl">bhanubhakta622@gmail.com</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
-              <a href="tel:+971545435736" aria-label="Call Bhanubhakta KC at +971 54 543 5736" title="Open your phone dialer" className="contact-action group flex items-center gap-4 border-b border-[#BFC7C6] py-6 transition hover:bg-[#E8E4DA] sm:px-2"><Phone size={22} className="text-[#A37624]" /><div className="flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Phone</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">+971 54 543 5736</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
-              <div className="flex items-center gap-4 border-b border-[#BFC7C6] py-6 sm:px-2"><MapPin size={22} className="text-[#A37624]" /><div><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Location</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">Ghayathi, Abu Dhabi, UAE</p></div></div>
+              <a href="mailto:bhanubhakta622@gmail.com" aria-label="Send an email to Bhanubhakta KC" title="Open your default email application" className="contact-action group my-2 flex items-center gap-4 rounded-[1.15rem] border border-[#D4DDD8] bg-[#FAFBF8] px-4 py-5 transition hover:bg-[#E8E4DA] sm:px-5"><Mail size={22} className="text-[#A37624]" /><div className="min-w-0 flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Email</p><p className="mt-1 break-all font-display text-xl text-[#142B42] sm:text-2xl">bhanubhakta622@gmail.com</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+              <a href="tel:+971545435736" aria-label="Call Bhanubhakta KC at +971 54 543 5736" title="Open your phone dialer" className="contact-action group my-2 flex items-center gap-4 rounded-[1.15rem] border border-[#D4DDD8] bg-[#FAFBF8] px-4 py-5 transition hover:bg-[#E8E4DA] sm:px-5"><Phone size={22} className="text-[#A37624]" /><div className="flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Phone</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">+971 54 543 5736</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+              <div className="my-2 flex items-center gap-4 rounded-[1.15rem] border border-[#D4DDD8] bg-[#FAFBF8] px-4 py-5 sm:px-5"><MapPin size={22} className="text-[#A37624]" /><div><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Location</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">Ghayathi, Abu Dhabi, UAE</p></div></div>
             </div>
           </div>
         </section>

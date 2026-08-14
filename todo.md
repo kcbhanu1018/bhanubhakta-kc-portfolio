@@ -67,3 +67,9 @@
 - [x] Redesign the header with softer corners, refined border depth, and a less stark light surface.
 - [x] Add a translucent scroll-state response to the fixed header.
 - [x] Verify the revised chrome at desktop and mobile widths.
+
+## Rounded component system
+
+- [x] Apply the header’s soft rounded-corner language to cards, panels, buttons, and contact rows.
+- [x] Preserve accessible spacing, readable borders, and a professional visual hierarchy.
+- [x] Verify the rounded system at desktop and mobile widths.
