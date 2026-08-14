@@ -115,7 +115,7 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F3F0EA] text-[#142B42] selection:bg-[#D4A64A] selection:text-[#142B42]">
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between border border-white/10 bg-[#10263C]/95 px-4 py-3 text-[#F7F4ED] shadow-[0_18px_40px_rgba(9,24,38,0.22)] backdrop-blur-md sm:px-5">
+        <div className="mx-auto flex max-w-[1440px] items-center justify-between border border-white/20 bg-[#173A52]/92 px-4 py-3 text-[#F7F4ED] shadow-[0_18px_40px_rgba(33,65,82,0.18)] backdrop-blur-md sm:px-5">
           <a href="#top" className="flex items-center gap-3" aria-label="Go to top">
             <img src="/manus-storage/bk-inspection-mark_5c92d9c6.png" alt="BK inspection mark" className="h-10 w-10 object-contain" />
             <span className="header-signature leading-none">
@@ -166,8 +166,8 @@ export default function Home() {
       <main id="top">
         <section className="hero-depth relative min-h-[760px] overflow-hidden bg-[#10263C] pt-28 sm:pt-32 lg:min-h-[820px]">
           <img src="/manus-storage/bhanubhakta-hero_c4e16ab6.jpg" alt="Immaculate premium hospitality corridor" className="absolute inset-0 h-full w-full object-cover object-[66%_center]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,28,45,0.99)_0%,rgba(10,28,45,0.94)_35%,rgba(10,28,45,0.43)_70%,rgba(10,28,45,0.2)_100%)]" />
-          <div className="blueprint-grid absolute inset-0 opacity-40" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(22,50,70,0.94)_0%,rgba(22,50,70,0.88)_35%,rgba(22,50,70,0.35)_70%,rgba(22,50,70,0.12)_100%)]" />
+          <div className="blueprint-grid absolute inset-0 opacity-25" />
 
           <div className="relative mx-auto grid min-h-[630px] max-w-[1440px] items-end px-5 pb-16 sm:px-8 sm:pb-20 lg:min-h-[690px] lg:grid-cols-[minmax(0,0.9fr)_minmax(330px,0.36fr)] lg:px-12 lg:pb-12">
             <div className="max-w-3xl">
@@ -203,22 +203,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="social-ledger bg-[#10263C] px-5 py-7 text-[#F7F4ED] sm:px-8 lg:px-12" aria-label="Social media presence">
+        <section className="social-ledger bg-[#E6ECEA] px-5 py-7 text-[#142B42] sm:px-8 lg:px-12" aria-label="Social media presence">
           <div className="mx-auto grid max-w-[1440px] gap-5 lg:grid-cols-[0.28fr_0.72fr] lg:items-center lg:gap-10">
             <div>
-              <p className="text-[0.6rem] font-bold uppercase tracking-[0.19em] text-[#D4A64A]">Connected community</p>
-              <p className="mt-1 font-display text-2xl tracking-[-0.03em] text-[#F7F4ED]">Follow the journey.</p>
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.19em] text-[#A37624]">Connected community</p>
+              <p className="mt-1 font-display text-2xl tracking-[-0.03em] text-[#142B42]">Follow the journey.</p>
             </div>
-            <div className="grid border-t border-white/15 sm:grid-cols-3 sm:border-l sm:border-t-0">
+            <div className="grid border-t border-[#B9C5C4] sm:grid-cols-3 sm:border-l sm:border-t-0">
               {[
-                ["Facebook", "10,000+", "f", "https://www.facebook.com/bhanu622"],
-                ["LinkedIn", "1,200+", "in", "https://www.linkedin.com/in/bhanubhakta-kc/"],
-                ["TikTok", "3,000+", "♪", "https://tiktok.com/bhanu1018"],
-              ].map(([network, following, monogram, url]) => (
-                <a key={network} href={url} target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 border-b border-white/15 py-4 transition sm:border-b-0 sm:border-r sm:px-5 sm:py-2 lg:px-7">
-                  <span className="grid h-9 w-9 shrink-0 place-items-center border border-[#D4A64A]/70 font-display text-base text-[#F2CC79] transition group-hover:bg-[#D4A64A] group-hover:text-[#10263C]">{monogram}</span>
-                  <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#AABAC3]">{network}</span><strong className="mt-1 block font-display text-xl font-normal text-[#F7F4ED]">{following} <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#D4A64A]">Followers</small></strong></span>
-                  <ExternalLink size={15} className="shrink-0 text-[#D4A64A] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                ["Facebook", "10,000+", "https://cdn.simpleicons.org/facebook/1877F2", "https://www.facebook.com/bhanu622"],
+                ["LinkedIn", "1,200+", "https://cdn.simpleicons.org/linkedin/0A66C2", "https://www.linkedin.com/in/bhanubhakta-kc/"],
+                ["TikTok", "3,000+", "https://cdn.simpleicons.org/tiktok/111827", "https://tiktok.com/bhanu1018"],
+              ].map(([network, following, iconUrl, url]) => (
+                <a key={network} href={url} target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 border-b border-[#B9C5C4] py-4 transition sm:border-b-0 sm:border-r sm:px-5 sm:py-2 lg:px-7">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white shadow-[0_4px_12px_rgba(32,58,73,0.12)] transition group-hover:-translate-y-0.5"><img src={iconUrl} alt="" className="h-5 w-5" /></span>
+                  <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#536B78]">{network}</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42]">{following} <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#9B7022]">Followers</small></strong></span>
+                  <ExternalLink size={15} className="shrink-0 text-[#9B7022] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                 </a>
               ))}
             </div>
@@ -264,28 +264,28 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="career-record relative px-5 py-20 text-[#F7F4ED] sm:px-8 lg:px-12 lg:py-28">
+        <section id="experience" className="career-record relative px-5 py-20 text-[#142B42] sm:px-8 lg:px-12 lg:py-28">
           <div className="blueprint-grid absolute inset-0 opacity-25" />
           <div className="relative mx-auto max-w-[1440px]">
             <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20">
               <div>
                 <p className="eyebrow text-[#D4A64A]">02 / Career record</p>
                 <h2 className="section-title mt-5 text-[#F7F4ED]">Experience that holds the standard.</h2>
-                <p className="mt-6 max-w-sm border-l border-[#D4A64A] pl-4 text-sm leading-7 text-[#DCE7EA]">From energy infrastructure to luxury guest spaces, the work is grounded in consistent service, safe systems, and teams that know what excellent looks like.</p>
+                <p className="mt-6 max-w-sm border-l border-[#B78428] pl-4 text-sm leading-7 text-[#405B6B]">From energy infrastructure to luxury guest spaces, the work is grounded in consistent service, safe systems, and teams that know what excellent looks like.</p>
               </div>
-              <div className="border-t border-[#6F8996]">
+              <div className="border-t border-[#8FA5AD]">
                 {experience.map((job, index) => (
-                  <article key={job.company} className="group grid gap-5 border-b border-[#4A6879] py-8 transition duration-200 hover:bg-[#173A52]/55 sm:grid-cols-[138px_1fr] sm:gap-8 sm:px-4 lg:py-10 lg:px-5">
+                  <article key={job.company} className="group grid gap-5 border-b border-[#A7BBC0] py-8 transition duration-200 hover:bg-white/70 sm:grid-cols-[138px_1fr] sm:gap-8 sm:px-4 lg:py-10 lg:px-5">
                     <div>
-                      <p className="inline-block border-b border-[#D4A64A] pb-1 text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-[#F2CC79]">{job.period}</p>
-                      <p className="mt-3 flex items-center gap-2 text-xs leading-5 text-[#D4E0E4]"><MapPin size={13} className="shrink-0 text-[#D4A64A]" /> {job.location}</p>
+                      <p className="inline-block border-b border-[#B78428] pb-1 text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-[#8D661F]">{job.period}</p>
+                      <p className="mt-3 flex items-center gap-2 text-xs leading-5 text-[#4F6876]"><MapPin size={13} className="shrink-0 text-[#A37624]" /> {job.location}</p>
                     </div>
                     <div>
-                      <span className="mb-4 inline-flex h-7 w-7 items-center justify-center border border-[#E5BB63] bg-[#102C43] font-display text-base text-[#F2CC79]">0{index + 1}</span>
-                      <h3 className="font-display text-2xl leading-tight text-white sm:text-3xl">{job.role}</h3>
-                      <p className="mt-2 text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-[#F2CC79]">{job.company}</p>
+                      <span className="mb-4 inline-flex h-7 w-7 items-center justify-center border border-[#B78428] bg-[#F7F4ED] font-display text-base text-[#8D661F]">0{index + 1}</span>
+                      <h3 className="font-display text-2xl leading-tight text-[#142B42] sm:text-3xl">{job.role}</h3>
+                      <p className="mt-2 text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-[#8D661F]">{job.company}</p>
                       <ul className="mt-5 grid gap-3">
-                        {job.points.map((point) => <li key={point} className="flex gap-3 text-sm leading-6 text-[#E6EEF0]"><Check size={17} className="mt-0.5 shrink-0 text-[#F2CC79]" strokeWidth={2.6} /><span>{point}</span></li>)}
+                        {job.points.map((point) => <li key={point} className="flex gap-3 text-sm leading-6 text-[#28495B]"><Check size={17} className="mt-0.5 shrink-0 text-[#A37624]" strokeWidth={2.6} /><span>{point}</span></li>)}
                       </ul>
                     </div>
                   </article>

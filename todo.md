@@ -9,3 +9,10 @@
 - [x] Add Facebook, LinkedIn, and TikTok profile links to the homepage.
 - [x] Present the supplied follower totals within a polished social proof treatment.
 - [x] Verify the social profile section at desktop and mobile widths.
+
+## Theme and icon refinement
+
+- [x] Brighten the overall color balance, particularly the hero and navy content bands.
+- [x] Restyle the social follower section with a lighter background.
+- [x] Replace social monograms with recognizable platform icons.
+- [x] Verify the refreshed presentation at desktop and mobile widths.
