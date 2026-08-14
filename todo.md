@@ -28,3 +28,11 @@
 - [x] Source exact official Facebook, LinkedIn, and TikTok brand marks.
 - [x] Replace the existing approximate icon treatment in the social panel.
 - [x] Verify the official marks render correctly at desktop and mobile widths.
+
+## Personalized hero redesign
+
+- [x] Receive and prepare the user’s supplied real portrait for the hero.
+- [x] Replace the current hero image with the prepared real portrait.
+- [x] Promote “Bhanubhakta KC” to the primary hero display typography.
+- [x] Reduce “Order behind every exceptional environment.” to a supporting slogan.
+- [x] Verify the personalized hero at desktop and mobile widths.
