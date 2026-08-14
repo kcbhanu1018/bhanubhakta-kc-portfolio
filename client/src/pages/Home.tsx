@@ -200,7 +200,7 @@ export default function Home() {
         setActiveSection(entry.target.id);
         setFlippingSection(entry.target.id);
         if (flipTimer) window.clearTimeout(flipTimer);
-        flipTimer = window.setTimeout(() => setFlippingSection(""), 1120);
+        flipTimer = window.setTimeout(() => setFlippingSection(""), 460);
       }),
       { rootMargin: "-28% 0px -62% 0px", threshold: 0.01 },
     );

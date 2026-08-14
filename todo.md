@@ -118,3 +118,10 @@
 - [x] Replace the subtle page-turn accent with a clearly visible animated page sheet.
 - [x] Trigger the flip at each major section boundary without obscuring readable content.
 - [x] Preserve reduced-motion accessibility and validate the visible flip at desktop and mobile widths.
+
+## Seamless book flip and 3D depth refinement
+
+- [x] Replace the blank-page overlay with a fast, content-preserving book flip.
+- [x] Ensure the next section remains visibly populated during the transition.
+- [x] Add refined 3D depth to major cards, panels, and the hero without reducing readability.
+- [x] Validate transition continuity and 3D effects at desktop and mobile widths.
