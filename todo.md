@@ -125,3 +125,9 @@
 - [x] Ensure the next section remains visibly populated during the transition.
 - [x] Add refined 3D depth to major cards, panels, and the hero without reducing readability.
 - [x] Validate transition continuity and 3D effects at desktop and mobile widths.
+
+## Remove page-flip transition
+
+- [x] Remove all scroll-triggered page-flip state, section hooks, and visual overlay rules.
+- [x] Preserve the existing 3D depth styling on the hero, panels, cards, and contact surfaces.
+- [x] Verify the stable transition-free design at desktop and mobile widths.
