@@ -14,6 +14,7 @@ import {
   ChevronRight,
   ClipboardCheck,
   Download,
+  ExternalLink,
   FileText,
   Languages,
   Mail,
@@ -199,6 +200,28 @@ export default function Home() {
                 <div><strong className="font-display text-3xl font-normal text-[#F7F4ED]">3</strong><span className="mt-1 block text-[0.58rem] font-bold uppercase tracking-[0.14em] text-[#A8B6BF]">Languages</span></div>
               </div>
             </aside>
+          </div>
+        </section>
+
+        <section className="social-ledger bg-[#10263C] px-5 py-7 text-[#F7F4ED] sm:px-8 lg:px-12" aria-label="Social media presence">
+          <div className="mx-auto grid max-w-[1440px] gap-5 lg:grid-cols-[0.28fr_0.72fr] lg:items-center lg:gap-10">
+            <div>
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.19em] text-[#D4A64A]">Connected community</p>
+              <p className="mt-1 font-display text-2xl tracking-[-0.03em] text-[#F7F4ED]">Follow the journey.</p>
+            </div>
+            <div className="grid border-t border-white/15 sm:grid-cols-3 sm:border-l sm:border-t-0">
+              {[
+                ["Facebook", "10,000+", "f", "https://www.facebook.com/bhanu622"],
+                ["LinkedIn", "1,200+", "in", "https://www.linkedin.com/in/bhanubhakta-kc/"],
+                ["TikTok", "3,000+", "♪", "https://tiktok.com/bhanu1018"],
+              ].map(([network, following, monogram, url]) => (
+                <a key={network} href={url} target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 border-b border-white/15 py-4 transition sm:border-b-0 sm:border-r sm:px-5 sm:py-2 lg:px-7">
+                  <span className="grid h-9 w-9 shrink-0 place-items-center border border-[#D4A64A]/70 font-display text-base text-[#F2CC79] transition group-hover:bg-[#D4A64A] group-hover:text-[#10263C]">{monogram}</span>
+                  <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#AABAC3]">{network}</span><strong className="mt-1 block font-display text-xl font-normal text-[#F7F4ED]">{following} <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#D4A64A]">Followers</small></strong></span>
+                  <ExternalLink size={15} className="shrink-0 text-[#D4A64A] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </a>
+              ))}
+            </div>
           </div>
         </section>
 
