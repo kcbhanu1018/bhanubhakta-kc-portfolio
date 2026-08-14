@@ -80,10 +80,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .contact-wallet-card.is-opening { box-shadow: 0 10px 0 rgba(45, 77, 91, 0.06), 0 22px 32px rgba(27, 54, 68, 0.15); transform: translateX(12px) scale(1.025); }
 .education-card { box-shadow: 0 12px 26px rgba(29, 58, 72, 0.06); transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1), border-color 200ms cubic-bezier(0.23, 1, 0.32, 1); }
 .education-card:hover { border-color: #D4A64A; box-shadow: 0 18px 32px rgba(29, 58, 72, 0.12); transform: translateY(-3px); }
-.page-turn { isolation: isolate; }
-.page-turn::after { content: ""; position: absolute; z-index: 20; right: 0; bottom: 0; width: min(24vw, 19rem); height: min(10vw, 8.5rem); pointer-events: none; opacity: 0; transform-origin: 100% 100%; background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(238,231,211,0.92) 62%, rgba(187,160,103,0.58) 100%); box-shadow: -18px -8px 26px rgba(29, 48, 59, 0.12); clip-path: polygon(100% 0, 100% 100%, 0 100%); }
-.page-turn-active::after { animation: page-turn 760ms cubic-bezier(0.23, 1, 0.32, 1) 220ms both; }
-@keyframes page-turn { 0% { opacity: 0; transform: perspective(900px) rotateY(0deg) translateX(0); } 22% { opacity: 0.88; } 68% { opacity: 0.68; transform: perspective(900px) rotateY(-62deg) translateX(-14px); } 100% { opacity: 0; transform: perspective(900px) rotateY(-100deg) translateX(-22px); } }
+.page-turn { isolation: isolate; perspective: 1500px; }
+.page-turn::before { content: ""; position: absolute; z-index: 30; inset: 0 0 auto 0; height: clamp(12rem, 29vw, 23rem); pointer-events: none; opacity: 0; transform: perspective(1500px) rotateY(94deg); transform-origin: right center; background: linear-gradient(135deg, #FCF8EC 0%, #EBD9AD 42%, #C6953C 100%); box-shadow: -24px 20px 35px rgba(22, 42, 53, 0.28), inset 14px 0 18px rgba(255,255,255,0.48); }
+.page-turn::after { content: ""; position: absolute; z-index: 29; inset: 0 0 auto 0; height: 2px; background: linear-gradient(90deg, transparent, rgba(212,166,74,0.85), transparent); opacity: 0; }
+.page-flip-active::before { animation: page-sheet-flip 1120ms cubic-bezier(0.2, 0.82, 0.2, 1) both; }
+.page-flip-active::after { animation: page-flip-glint 1120ms ease-out both; }
+@keyframes page-sheet-flip { 0% { opacity: 1; transform: perspective(1500px) rotateY(0deg) translateX(0); } 24% { opacity: 1; transform: perspective(1500px) rotateY(-24deg) translateX(-1%); } 67% { opacity: 0.9; transform: perspective(1500px) rotateY(-82deg) translateX(-8%); } 100% { opacity: 0; transform: perspective(1500px) rotateY(-112deg) translateX(-22%); } }
+@keyframes page-flip-glint { 0%, 100% { opacity: 0; } 18%, 72% { opacity: 1; } }
 .reveal-on-scroll { opacity: 0; transform: translateY(18px); transition: opacity 480ms cubic-bezier(0.23, 1, 0.32, 1), transform 480ms cubic-bezier(0.23, 1, 0.32, 1); }
 .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 a:focus-visible, button:focus-visible { outline: 2px solid #D4A64A; outline-offset: 4px; }
@@ -106,7 +109,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid #D4A64A; outline-offs
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal-on-scroll { opacity: 1; transform: none; transition: none; }
-  .page-turn-active::after { animation: none; }
+  .page-flip-active::before, .page-flip-active::after { animation: none; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 

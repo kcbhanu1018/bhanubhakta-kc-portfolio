@@ -112,3 +112,9 @@
 - [x] Add a subtle page-turn visual transition at major section endings.
 - [x] Ensure the transition remains unobtrusive and does not affect content layout or readability.
 - [x] Preserve reduced-motion accessibility and validate the effect at desktop and mobile widths.
+
+## Visible page-flip replacement
+
+- [x] Replace the subtle page-turn accent with a clearly visible animated page sheet.
+- [x] Trigger the flip at each major section boundary without obscuring readable content.
+- [x] Preserve reduced-motion accessibility and validate the visible flip at desktop and mobile widths.
