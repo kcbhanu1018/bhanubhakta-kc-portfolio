@@ -69,6 +69,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-action:hover { box-shadow: 0 13px 22px rgba(3, 22, 34, 0.25); transform: translateY(-4px); }
 .contact-action { transition: background-color 180ms cubic-bezier(0.23, 1, 0.32, 1), transform 180ms cubic-bezier(0.23, 1, 0.32, 1); }
 .contact-action:hover { transform: translateX(5px); }
+.contact-wallet { display: grid; gap: 0.5rem; }
+.contact-wallet-card { position: relative; overflow: hidden; border: 1px solid #d4ddd8; border-radius: 1.15rem; background: #fafbf8; padding: 1rem 1.15rem; box-shadow: 0 4px 0 rgba(45, 77, 91, 0.06), 0 12px 22px rgba(27, 54, 68, 0.05); transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 220ms cubic-bezier(0.23, 1, 0.32, 1), border-color 220ms cubic-bezier(0.23, 1, 0.32, 1); }
+.contact-wallet-card::after { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: #d4a64a; opacity: 0; transition: opacity 180ms ease-out; }
+.contact-wallet-card:hover { border-color: #b9c9c4; box-shadow: 0 7px 0 rgba(45, 77, 91, 0.06), 0 18px 28px rgba(27, 54, 68, 0.12); transform: translateX(7px) translateY(-3px); }
+.contact-wallet-card:hover::after, .contact-wallet-card.is-opening::after { opacity: 1; }
+.contact-wallet-card.is-opening { box-shadow: 0 10px 0 rgba(45, 77, 91, 0.06), 0 22px 32px rgba(27, 54, 68, 0.15); transform: translateX(12px) scale(1.025); }
 .reveal-on-scroll { opacity: 0; transform: translateY(18px); transition: opacity 480ms cubic-bezier(0.23, 1, 0.32, 1), transform 480ms cubic-bezier(0.23, 1, 0.32, 1); }
 .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 a:focus-visible, button:focus-visible { outline: 2px solid #D4A64A; outline-offset: 4px; }
@@ -102,4 +108,5 @@ a:focus-visible, button:focus-visible { outline: 2px solid #D4A64A; outline-offs
   .hero-name { letter-spacing: -0.065em; }
   .hero-image { object-position: 64% center; }
   .hero-overlay { background: linear-gradient(0deg, rgba(13, 43, 61, 0.88) 0%, rgba(13, 43, 61, 0.72) 48%, rgba(13, 43, 61, 0.42) 100%); }
+  .contact-wallet-card { padding: 0.9rem 1rem; }
 }

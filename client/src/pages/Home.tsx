@@ -113,7 +113,16 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const [openingContact, setOpeningContact] = useState("");
   const closeMenu = () => setMenuOpen(false);
+  const runContactAction = (event: { preventDefault: () => void }, target: string, card: string) => {
+    event.preventDefault();
+    setOpeningContact(card);
+    window.setTimeout(() => {
+      window.location.href = target;
+      setOpeningContact("");
+    }, 220);
+  };
 
   useEffect(() => {
     const updateHeader = () => setScrolled(window.scrollY > 32);
@@ -204,8 +213,8 @@ export default function Home() {
                 <span className="h-1.5 w-1.5 rounded-full bg-current" />
                 <span className="text-[0.64rem] font-bold uppercase tracking-[0.2em]">Housekeeping operations · Facility services</span>
               </div>
-              <h1 className="max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold leading-[0.92] tracking-[-0.065em] text-white">
-                Bhanubhakta <span className="text-[#E5BB63]">KC</span>
+              <h1 className="max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.065em] text-white">
+                BHANUBHAKTA <span className="text-[#E5BB63]">KC</span>
               </h1>
               <div className="mt-7 flex max-w-xl items-center gap-3">
                 <span className="h-px w-10 shrink-0 bg-[#D4A64A]" />
@@ -389,10 +398,10 @@ export default function Home() {
         <section id="contact" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.5fr_0.5fr] lg:gap-20">
             <div><p className="eyebrow">05 / Contact</p><h2 className="section-title mt-5 max-w-xl">Let’s discuss a stronger standard of operations.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#536772]">Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.</p></div>
-            <div className="border-t-2 border-[#142B42]">
-              <a href="mailto:bhanubhakta622@gmail.com" aria-label="Send an email to Bhanubhakta KC" title="Open your default email application" className="contact-action group my-2 flex items-center gap-4 rounded-[1.15rem] border border-[#D4DDD8] bg-[#FAFBF8] px-4 py-5 transition hover:bg-[#E8E4DA] sm:px-5"><Mail size={22} className="text-[#A37624]" /><div className="min-w-0 flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Email</p><p className="mt-1 break-all font-display text-xl text-[#142B42] sm:text-2xl">bhanubhakta622@gmail.com</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
-              <a href="tel:+971545435736" aria-label="Call Bhanubhakta KC at +971 54 543 5736" title="Open your phone dialer" className="contact-action group my-2 flex items-center gap-4 rounded-[1.15rem] border border-[#D4DDD8] bg-[#FAFBF8] px-4 py-5 transition hover:bg-[#E8E4DA] sm:px-5"><Phone size={22} className="text-[#A37624]" /><div className="flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Phone</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">+971 54 543 5736</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
-              <div className="my-2 flex items-center gap-4 rounded-[1.15rem] border border-[#D4DDD8] bg-[#FAFBF8] px-4 py-5 sm:px-5"><MapPin size={22} className="text-[#A37624]" /><div><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Location</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">Ghayathi, Abu Dhabi, UAE</p></div></div>
+            <div className="contact-wallet border-t-2 border-[#142B42] pt-2">
+              <a href="mailto:bhanubhakta622@gmail.com" onClick={(event) => runContactAction(event, "mailto:bhanubhakta622@gmail.com", "email")} aria-label="Send an email to Bhanubhakta KC" title="Open your default email application" className={`contact-wallet-card group flex items-center gap-4 ${openingContact === "email" ? "is-opening" : ""}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#F3E2B7] text-[#8D661F]"><Mail size={20} /></span><span className="min-w-0 flex-1"><span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Email</span><strong className="mt-1 block break-all font-display text-xl font-normal text-[#142B42] sm:text-2xl">bhanubhakta622@gmail.com</strong></span><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+              <a href="tel:+971545435736" onClick={(event) => runContactAction(event, "tel:+971545435736", "phone")} aria-label="Call Bhanubhakta KC at +971 54 543 5736" title="Open your phone dialer" className={`contact-wallet-card group flex items-center gap-4 ${openingContact === "phone" ? "is-opening" : ""}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#DCE9E8] text-[#28566B]"><Phone size={20} /></span><span className="flex-1"><span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Phone</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42] sm:text-2xl">+971 54 543 5736</strong></span><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Ghayathi%2C%20Abu%20Dhabi%2C%20UAE" target="_blank" rel="noreferrer" onClick={(event) => runContactAction(event, "https://www.google.com/maps/search/?api=1&query=Ghayathi%2C%20Abu%20Dhabi%2C%20UAE", "location")} aria-label="Open Ghayathi, Abu Dhabi, UAE in maps" className={`contact-wallet-card group flex items-center gap-4 ${openingContact === "location" ? "is-opening" : ""}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#E9E2F0] text-[#66507B]"><MapPin size={20} /></span><span className="flex-1"><span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Location</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42] sm:text-2xl">Ghayathi, Abu Dhabi, UAE</strong></span><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
             </div>
           </div>
         </section>

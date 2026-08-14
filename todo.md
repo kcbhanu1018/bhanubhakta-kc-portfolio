@@ -85,3 +85,10 @@
 - [x] Add active-section feedback to the header navigation.
 - [x] Add a compact professional contact cue in the hero.
 - [x] Verify the finishing details at desktop and mobile widths.
+
+## Uppercase hero and wallet-style contact cards
+
+- [x] Render “BHANUBHAKTA KC” in full uppercase within the hero.
+- [x] Convert email, phone, and location contact options into wallet-style interactive cards.
+- [x] Add a brief expansion/lift interaction before the contact action runs.
+- [x] Verify interaction behavior and responsive layout at desktop and mobile widths.
