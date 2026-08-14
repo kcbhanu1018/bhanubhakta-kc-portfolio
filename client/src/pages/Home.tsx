@@ -166,22 +166,20 @@ export default function Home() {
 
       <main id="top">
         <section className="hero-depth relative min-h-[760px] overflow-hidden pt-28 sm:pt-32 lg:min-h-[820px]">
-          <div className="blueprint-grid absolute inset-0 opacity-30" />
-          <div className="hero-orbit absolute -right-24 top-24 h-[30rem] w-[30rem] rounded-full border border-[#D4A64A]/25 sm:h-[39rem] sm:w-[39rem]" />
-          <div className="hero-orbit absolute -right-8 top-44 h-[23rem] w-[23rem] rounded-full border border-white/10 sm:h-[31rem] sm:w-[31rem]" />
+          <div className="hero-soft-light absolute -right-28 top-24 h-[34rem] w-[34rem] rounded-full opacity-80 sm:h-[43rem] sm:w-[43rem]" />
 
-          <div className="relative mx-auto grid min-h-[630px] max-w-[1440px] items-end px-5 pb-16 sm:px-8 sm:pb-20 lg:min-h-[690px] lg:grid-cols-[minmax(0,0.69fr)_minmax(330px,0.31fr)] lg:gap-8 lg:px-12 lg:pb-12">
+          <div className="relative mx-auto grid min-h-[630px] max-w-[1440px] items-end px-5 pb-12 sm:px-8 sm:pb-16 lg:min-h-[690px] lg:grid-cols-[minmax(0,0.67fr)_minmax(350px,0.33fr)] lg:gap-8 lg:px-12 lg:pb-12">
             <div className="z-10 max-w-4xl">
               <div className="mb-7 flex items-center gap-3 text-[#E5BB63]">
                 <span className="h-2 w-2 bg-current" />
                 <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em]">Senior Housekeeping Supervisor</span>
               </div>
-              <h1 className="hero-name font-display font-normal leading-[0.76] tracking-[-0.075em] text-[#F7F4ED]">
-                <span className="block text-[clamp(3.8rem,9vw,9.3rem)]">Bhanubhakta</span>
-                <span className="ml-[0.06em] block text-[clamp(4.4rem,10.8vw,11.3rem)] italic text-[#E5BB63]">KC</span>
+              <h1 className="hero-name font-display font-normal text-[#F7F4ED]">
+                <span className="hero-name-first block text-[clamp(3.2rem,7.5vw,8.3rem)] leading-[0.84] tracking-[-0.075em]"><b className="font-normal text-[#E5BB63]">B</b>hanubhakta</span>
+                <span className="mt-2 flex items-end gap-4 sm:gap-6"><strong className="hero-name-kc block text-[clamp(4.4rem,9.5vw,9.6rem)] leading-[0.68] tracking-[-0.1em] text-[#E5BB63]">KC</strong><em className="mb-1 border-l border-[#E5BB63]/80 pl-4 text-[0.58rem] not-italic font-extrabold uppercase leading-5 tracking-[0.18em] text-[#DCE7EA] sm:mb-2 sm:text-[0.65rem]">Housekeeping<br />Leadership</em></span>
               </h1>
-              <div className="mt-8 flex max-w-2xl items-start gap-4 border-y border-white/20 py-4">
-                <span className="mt-1 h-7 w-[3px] shrink-0 bg-[#D4A64A]" />
+              <div className="mt-8 flex max-w-2xl items-center gap-4">
+                <span className="h-[2px] w-10 shrink-0 bg-[#D4A64A]" />
                 <p className="text-[0.66rem] font-extrabold uppercase leading-6 tracking-[0.18em] text-[#DCE7EA] sm:text-[0.72rem]">Order behind every exceptional environment.</p>
               </div>
               <p className="mt-7 max-w-xl text-base leading-7 text-[#DCE7EA] sm:text-lg">
@@ -197,16 +195,14 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="relative mt-10 min-h-[360px] lg:mt-0 lg:min-h-[670px]">
-              <div className="hero-portrait-panel absolute inset-x-2 bottom-0 top-12 border border-white/15 bg-[#204760]/40 backdrop-blur-[1px] lg:inset-x-0 lg:top-6" />
-              <img src="/manus-storage/bhanubhakta-kc-portrait_8ebafbda.png" alt="Bhanubhakta KC" className="hero-portrait absolute bottom-0 left-1/2 z-10 h-[375px] max-w-none -translate-x-1/2 object-contain sm:h-[455px] lg:h-[650px]" />
-              <div className="absolute bottom-5 left-5 z-20 border-l-2 border-[#D4A64A] bg-[#10263C]/80 px-4 py-3 backdrop-blur-md lg:bottom-7 lg:left-7">
-                <p className="text-[0.58rem] font-bold uppercase tracking-[0.18em] text-[#AEBEC7]">Based in</p>
-                <p className="mt-1 flex items-center gap-2 font-display text-xl text-[#F7F4ED]"><MapPin size={16} className="text-[#D4A64A]" /> Abu Dhabi, UAE</p>
-              </div>
-              <div className="absolute right-5 top-4 z-20 hidden border border-white/20 bg-[#F7F4ED]/95 px-4 py-3 text-[#142B42] shadow-[0_12px_30px_rgba(5,22,35,0.16)] sm:block lg:right-0 lg:top-8">
-                <span className="block text-[0.55rem] font-extrabold uppercase tracking-[0.17em] text-[#8D661F]">Professional record</span>
-                <strong className="mt-1 block font-display text-2xl font-normal">7+ years</strong>
+            <aside className="relative mt-8 h-[295px] sm:mt-10 sm:h-[390px] lg:mt-0 lg:h-[655px]">
+              <div className="hero-portrait-panel absolute inset-0 overflow-hidden" />
+              <span className="absolute left-5 top-5 z-10 text-[0.58rem] font-extrabold uppercase tracking-[0.18em] text-[#DCE7EA]/80 sm:left-7 sm:top-7">Abu Dhabi · UAE</span>
+              <span className="absolute left-5 top-11 z-10 h-[2px] w-9 bg-[#D4A64A] sm:left-7 sm:top-14" />
+              <img src="/manus-storage/bhanubhakta-kc-portrait_8ebafbda.png" alt="Bhanubhakta KC" className="hero-portrait absolute bottom-0 right-3 z-10 h-[325px] max-w-none object-contain sm:right-7 sm:h-[425px] lg:right-2 lg:h-[650px]" />
+              <div className="absolute bottom-4 left-4 z-20 bg-[#F7F4ED] px-3 py-2 text-[#142B42] shadow-[0_10px_22px_rgba(4,24,38,0.18)] sm:bottom-6 sm:left-6 sm:px-4 sm:py-3">
+                <span className="block text-[0.5rem] font-extrabold uppercase tracking-[0.16em] text-[#8D661F]">Professional record</span>
+                <strong className="mt-1 block font-display text-lg font-normal sm:text-xl">7+ years</strong>
               </div>
             </aside>
           </div>

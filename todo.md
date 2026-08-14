@@ -36,3 +36,10 @@
 - [x] Promote “Bhanubhakta KC” to the primary hero display typography.
 - [x] Reduce “Order behind every exceptional environment.” to a supporting slogan.
 - [x] Verify the personalized hero at desktop and mobile widths.
+
+## Responsive hero modernization
+
+- [x] Remove the distracting blueprint and orbit lines from the hero background.
+- [x] Create a more distinctive custom name treatment for “Bhanubhakta KC”.
+- [x] Recompose the portrait and hero content for a professional tablet and mobile experience.
+- [x] Validate the redesigned hero at desktop, tablet, and mobile widths.

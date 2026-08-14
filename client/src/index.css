@@ -51,9 +51,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .inspection-rule span { display: block; width: 7rem; height: 1px; background: #D4A64A; position: relative; }
 .inspection-rule span::before { content: ""; position: absolute; left: 0; top: -3px; height: 7px; width: 7px; background: #D4A64A; }
 .inspection-rule em { color: #6C7A80; font-size: 0.59rem; font-style: normal; font-weight: 800; letter-spacing: 0.17em; text-transform: uppercase; }
-.hero-depth { background: radial-gradient(circle at 79% 45%, rgba(76, 139, 161, 0.34), transparent 27%), linear-gradient(116deg, #0C273B 0%, #173D57 55%, #0B293E 100%); }
-.hero-portrait-panel { box-shadow: inset 0 0 0 1px rgba(212, 166, 74, 0.12), 0 28px 54px rgba(4, 24, 38, 0.22); }
-.hero-portrait { filter: drop-shadow(0 18px 20px rgba(4, 24, 38, 0.38)); }
+.hero-depth { background: linear-gradient(116deg, #0C273B 0%, #173D57 55%, #0E3149 100%); }
+.hero-soft-light { background: radial-gradient(circle, rgba(212, 166, 74, 0.18) 0%, rgba(96, 158, 178, 0.12) 40%, transparent 70%); }
+.hero-portrait-panel { border-radius: 1.65rem; background: linear-gradient(145deg, rgba(65, 122, 144, 0.88), rgba(14, 49, 73, 0.88)); box-shadow: 0 30px 60px rgba(4, 24, 38, 0.24); }
+.hero-portrait-panel::after { content: ""; position: absolute; inset: auto 0 0; height: 46%; background: linear-gradient(0deg, rgba(7, 31, 47, 0.36), transparent); }
+.hero-portrait { filter: drop-shadow(0 18px 20px rgba(4, 24, 38, 0.33)); }
 .blueprint-grid { background-image: linear-gradient(rgba(210, 226, 234, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(210, 226, 234, 0.12) 1px, transparent 1px); background-size: 38px 38px; mask-image: linear-gradient(90deg, black, transparent 80%); }
 .header-signature { position: relative; min-width: 10.7rem; }
 .header-signature strong { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.18); }
@@ -82,4 +84,5 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .header-signature { min-width: 9.35rem; }
   .header-signature strong { font-size: 1.08rem; }
   .hero-name { letter-spacing: -0.065em; }
+  .hero-portrait-panel { border-radius: 1.25rem; }
 }
