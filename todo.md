@@ -16,3 +16,9 @@
 - [x] Restyle the social follower section with a lighter background.
 - [x] Replace social monograms with recognizable platform icons.
 - [x] Verify the refreshed presentation at desktop and mobile widths.
+
+## Social section correction
+
+- [x] Improve the social-media section background and card treatment.
+- [x] Replace the failed LinkedIn image source with a reliably rendered LinkedIn mark.
+- [x] Verify the revised social area at desktop and mobile widths.

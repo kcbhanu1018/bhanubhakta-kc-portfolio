@@ -15,11 +15,14 @@ import {
   ClipboardCheck,
   Download,
   ExternalLink,
+  Facebook,
   FileText,
   Languages,
+  Linkedin,
   Mail,
   MapPin,
   Menu,
+  Music2,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -203,24 +206,30 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="social-ledger bg-[#E6ECEA] px-5 py-7 text-[#142B42] sm:px-8 lg:px-12" aria-label="Social media presence">
-          <div className="mx-auto grid max-w-[1440px] gap-5 lg:grid-cols-[0.28fr_0.72fr] lg:items-center lg:gap-10">
+        <section className="social-ledger bg-[#F4F0E8] px-5 py-9 text-[#142B42] sm:px-8 lg:px-11" aria-label="Social media presence">
+          <div className="mx-auto grid max-w-[1440px] overflow-hidden border border-[#C6D1D0] bg-[#FCFBF7] shadow-[0_18px_38px_rgba(28,60,75,0.08)] lg:grid-cols-[0.28fr_0.72fr] lg:items-stretch">
             <div>
-              <p className="text-[0.6rem] font-bold uppercase tracking-[0.19em] text-[#A37624]">Connected community</p>
-              <p className="mt-1 font-display text-2xl tracking-[-0.03em] text-[#142B42]">Follow the journey.</p>
+              <div className="h-full border-b border-[#C6D1D0] bg-[linear-gradient(135deg,#F2D28D_0%,#E5B85D_100%)] px-6 py-6 lg:border-b-0 lg:border-r lg:px-8 lg:py-7">
+                <p className="text-[0.6rem] font-extrabold uppercase tracking-[0.19em] text-[#29475B]">Connected community</p>
+                <p className="mt-2 max-w-[12rem] font-display text-[1.75rem] leading-[0.92] tracking-[-0.04em] text-[#142B42]">Follow the journey.</p>
+              </div>
             </div>
-            <div className="grid border-t border-[#B9C5C4] sm:grid-cols-3 sm:border-l sm:border-t-0">
-              {[
-                ["Facebook", "10,000+", "https://cdn.simpleicons.org/facebook/1877F2", "https://www.facebook.com/bhanu622"],
-                ["LinkedIn", "1,200+", "https://cdn.simpleicons.org/linkedin/0A66C2", "https://www.linkedin.com/in/bhanubhakta-kc/"],
-                ["TikTok", "3,000+", "https://cdn.simpleicons.org/tiktok/111827", "https://tiktok.com/bhanu1018"],
-              ].map(([network, following, iconUrl, url]) => (
-                <a key={network} href={url} target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 border-b border-[#B9C5C4] py-4 transition sm:border-b-0 sm:border-r sm:px-5 sm:py-2 lg:px-7">
-                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white shadow-[0_4px_12px_rgba(32,58,73,0.12)] transition group-hover:-translate-y-0.5"><img src={iconUrl} alt="" className="h-5 w-5" /></span>
-                  <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#536B78]">{network}</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42]">{following} <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#9B7022]">Followers</small></strong></span>
-                  <ExternalLink size={15} className="shrink-0 text-[#9B7022] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </a>
-              ))}
+            <div className="grid sm:grid-cols-3">
+              <a href="https://www.facebook.com/bhanu622" target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 border-b border-[#D1DAD8] px-6 py-5 transition sm:border-b-0 sm:border-r sm:px-5 lg:px-7">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#1877F2] text-white shadow-[0_5px_12px_rgba(24,119,242,0.24)] transition group-hover:-translate-y-0.5"><Facebook size={21} fill="currentColor" /></span>
+                <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#536B78]">Facebook</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42]">10,000+ <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#9B7022]">Followers</small></strong></span>
+                <ExternalLink size={15} className="shrink-0 text-[#9B7022] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+              <a href="https://www.linkedin.com/in/bhanubhakta-kc/" target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 border-b border-[#D1DAD8] px-6 py-5 transition sm:border-b-0 sm:border-r sm:px-5 lg:px-7">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#0A66C2] text-white shadow-[0_5px_12px_rgba(10,102,194,0.24)] transition group-hover:-translate-y-0.5"><Linkedin size={21} fill="currentColor" /></span>
+                <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#536B78]">LinkedIn</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42]">1,200+ <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#9B7022]">Followers</small></strong></span>
+                <ExternalLink size={15} className="shrink-0 text-[#9B7022] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
+              <a href="https://tiktok.com/bhanu1018" target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 px-6 py-5 transition sm:px-5 lg:px-7">
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#111827] text-white shadow-[0_5px_12px_rgba(17,24,39,0.2)] transition group-hover:-translate-y-0.5"><Music2 size={20} fill="currentColor" /></span>
+                <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#536B78]">TikTok</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42]">3,000+ <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#9B7022]">Followers</small></strong></span>
+                <ExternalLink size={15} className="shrink-0 text-[#9B7022] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
             </div>
           </div>
         </section>
