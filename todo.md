@@ -22,3 +22,9 @@
 - [x] Improve the social-media section background and card treatment.
 - [x] Replace the failed LinkedIn image source with a reliably rendered LinkedIn mark.
 - [x] Verify the revised social area at desktop and mobile widths.
+
+## Official social mark correction
+
+- [x] Source exact official Facebook, LinkedIn, and TikTok brand marks.
+- [x] Replace the existing approximate icon treatment in the social panel.
+- [x] Verify the official marks render correctly at desktop and mobile widths.

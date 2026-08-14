@@ -15,19 +15,17 @@ import {
   ClipboardCheck,
   Download,
   ExternalLink,
-  Facebook,
   FileText,
   Languages,
-  Linkedin,
   Mail,
   MapPin,
   Menu,
-  Music2,
   Phone,
   ShieldCheck,
   Sparkles,
   X,
 } from "lucide-react";
+import { siFacebook, siTiktok } from "simple-icons/icons";
 
 const navItems = [
   ["Profile", "profile"],
@@ -216,17 +214,17 @@ export default function Home() {
             </div>
             <div className="grid sm:grid-cols-3">
               <a href="https://www.facebook.com/bhanu622" target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 border-b border-[#D1DAD8] px-6 py-5 transition sm:border-b-0 sm:border-r sm:px-5 lg:px-7">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#1877F2] text-white shadow-[0_5px_12px_rgba(24,119,242,0.24)] transition group-hover:-translate-y-0.5"><Facebook size={21} fill="currentColor" /></span>
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#1877F2] text-white shadow-[0_5px_12px_rgba(24,119,242,0.24)] transition group-hover:-translate-y-0.5"><svg aria-label="Facebook" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d={siFacebook.path} /></svg></span>
                 <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#536B78]">Facebook</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42]">10,000+ <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#9B7022]">Followers</small></strong></span>
                 <ExternalLink size={15} className="shrink-0 text-[#9B7022] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a href="https://www.linkedin.com/in/bhanubhakta-kc/" target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 border-b border-[#D1DAD8] px-6 py-5 transition sm:border-b-0 sm:border-r sm:px-5 lg:px-7">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#0A66C2] text-white shadow-[0_5px_12px_rgba(10,102,194,0.24)] transition group-hover:-translate-y-0.5"><Linkedin size={21} fill="currentColor" /></span>
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white shadow-[0_5px_12px_rgba(10,102,194,0.24)] transition group-hover:-translate-y-0.5"><img src="/manus-storage/linkedin-official-mark_551cf140.png" alt="LinkedIn" className="h-6 w-6 object-contain" /></span>
                 <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#536B78]">LinkedIn</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42]">1,200+ <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#9B7022]">Followers</small></strong></span>
                 <ExternalLink size={15} className="shrink-0 text-[#9B7022] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
               <a href="https://tiktok.com/bhanu1018" target="_blank" rel="noreferrer" className="social-ledger-link group flex items-center gap-4 px-6 py-5 transition sm:px-5 lg:px-7">
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#111827] text-white shadow-[0_5px_12px_rgba(17,24,39,0.2)] transition group-hover:-translate-y-0.5"><Music2 size={20} fill="currentColor" /></span>
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#111827] text-white shadow-[0_5px_12px_rgba(17,24,39,0.2)] transition group-hover:-translate-y-0.5"><svg aria-label="TikTok" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d={siTiktok.path} /></svg></span>
                 <span className="min-w-0 flex-1"><span className="block text-[0.58rem] font-bold uppercase tracking-[0.16em] text-[#536B78]">TikTok</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42]">3,000+ <small className="font-sans text-[0.57rem] font-bold uppercase tracking-[0.12em] text-[#9B7022]">Followers</small></strong></span>
                 <ExternalLink size={15} className="shrink-0 text-[#9B7022] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
               </a>
