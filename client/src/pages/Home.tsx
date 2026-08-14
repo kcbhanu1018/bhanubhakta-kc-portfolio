@@ -117,9 +117,10 @@ export default function Home() {
         <div className="mx-auto flex max-w-[1440px] items-center justify-between border border-white/10 bg-[#10263C]/95 px-4 py-3 text-[#F7F4ED] shadow-[0_18px_40px_rgba(9,24,38,0.22)] backdrop-blur-md sm:px-5">
           <a href="#top" className="flex items-center gap-3" aria-label="Go to top">
             <img src="/manus-storage/bk-inspection-mark_5c92d9c6.png" alt="BK inspection mark" className="h-10 w-10 object-contain" />
-            <span className="leading-none">
-              <strong className="block font-display text-[1.08rem] font-normal tracking-[0.015em]">Bhanubhakta KC</strong>
-              <small className="mt-1 block text-[0.6rem] font-bold uppercase tracking-[0.18em] text-[#D4A64A]">Operations portfolio</small>
+            <span className="header-signature leading-none">
+              <small className="block text-[0.54rem] font-extrabold uppercase tracking-[0.2em] text-[#D4A64A]">Housekeeping operations</small>
+              <strong className="mt-1 block font-display text-[1.25rem] font-normal tracking-[-0.02em] text-[#F7F4ED]">Bhanubhakta <i className="text-[#E5BB63]">KC</i></strong>
+              <span className="mt-1 flex items-center gap-1.5 text-[0.5rem] font-bold uppercase tracking-[0.16em] text-[#AEBEC7]"><span className="h-1 w-1 bg-[#D4A64A]" /> Senior supervisor</span>
             </span>
           </a>
 
@@ -240,28 +241,28 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="relative bg-[#10263C] px-5 py-20 text-[#F7F4ED] sm:px-8 lg:px-12 lg:py-28">
+        <section id="experience" className="career-record relative px-5 py-20 text-[#F7F4ED] sm:px-8 lg:px-12 lg:py-28">
           <div className="blueprint-grid absolute inset-0 opacity-25" />
           <div className="relative mx-auto max-w-[1440px]">
             <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20">
               <div>
                 <p className="eyebrow text-[#D4A64A]">02 / Career record</p>
                 <h2 className="section-title mt-5 text-[#F7F4ED]">Experience that holds the standard.</h2>
-                <p className="mt-6 max-w-sm text-sm leading-7 text-[#B6C2C9]">From energy infrastructure to luxury guest spaces, the work is grounded in consistent service, safe systems, and teams that know what excellent looks like.</p>
+                <p className="mt-6 max-w-sm border-l border-[#D4A64A] pl-4 text-sm leading-7 text-[#DCE7EA]">From energy infrastructure to luxury guest spaces, the work is grounded in consistent service, safe systems, and teams that know what excellent looks like.</p>
               </div>
-              <div className="border-t border-white/20">
+              <div className="border-t border-[#6F8996]">
                 {experience.map((job, index) => (
-                  <article key={job.company} className="group grid gap-5 border-b border-white/15 py-8 transition sm:grid-cols-[138px_1fr] sm:gap-8 lg:py-10">
+                  <article key={job.company} className="group grid gap-5 border-b border-[#4A6879] py-8 transition duration-200 hover:bg-[#173A52]/55 sm:grid-cols-[138px_1fr] sm:gap-8 sm:px-4 lg:py-10 lg:px-5">
                     <div>
-                      <p className="text-[0.62rem] font-bold uppercase tracking-[0.16em] text-[#D4A64A]">{job.period}</p>
-                      <p className="mt-3 flex items-center gap-2 text-xs leading-5 text-[#AAB8BF]"><MapPin size={13} className="shrink-0" /> {job.location}</p>
+                      <p className="inline-block border-b border-[#D4A64A] pb-1 text-[0.65rem] font-extrabold uppercase tracking-[0.16em] text-[#F2CC79]">{job.period}</p>
+                      <p className="mt-3 flex items-center gap-2 text-xs leading-5 text-[#D4E0E4]"><MapPin size={13} className="shrink-0 text-[#D4A64A]" /> {job.location}</p>
                     </div>
                     <div>
-                      <span className="mb-4 inline-flex h-6 w-6 items-center justify-center border border-[#D4A64A]/60 font-display text-sm text-[#D4A64A]">0{index + 1}</span>
-                      <h3 className="font-display text-2xl leading-tight text-[#F7F4ED] sm:text-3xl">{job.role}</h3>
-                      <p className="mt-2 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-[#D4A64A]">{job.company}</p>
+                      <span className="mb-4 inline-flex h-7 w-7 items-center justify-center border border-[#E5BB63] bg-[#102C43] font-display text-base text-[#F2CC79]">0{index + 1}</span>
+                      <h3 className="font-display text-2xl leading-tight text-white sm:text-3xl">{job.role}</h3>
+                      <p className="mt-2 text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-[#F2CC79]">{job.company}</p>
                       <ul className="mt-5 grid gap-3">
-                        {job.points.map((point) => <li key={point} className="flex gap-3 text-sm leading-6 text-[#C5CED2]"><Check size={16} className="mt-1 shrink-0 text-[#D4A64A]" strokeWidth={2.4} /><span>{point}</span></li>)}
+                        {job.points.map((point) => <li key={point} className="flex gap-3 text-sm leading-6 text-[#E6EEF0]"><Check size={17} className="mt-0.5 shrink-0 text-[#F2CC79]" strokeWidth={2.6} /><span>{point}</span></li>)}
                       </ul>
                     </div>
                   </article>
