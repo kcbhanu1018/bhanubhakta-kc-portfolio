@@ -138,3 +138,9 @@
 - [x] Replace the visible email address with a clean “Email Bhanubhakta KC” local-email action.
 - [x] Add a clear contact form that opens the visitor’s local email client with their message.
 - [x] Validate the refined hero and contact experience at desktop and mobile widths.
+
+## Flat hero title and WhatsApp contact
+
+- [x] Remove the 3D treatment from the BHANUBHAKTA KC hero title.
+- [x] Add an official WhatsApp icon and contact action for +971545435736.
+- [x] Validate the hero title and WhatsApp action at desktop and mobile widths.

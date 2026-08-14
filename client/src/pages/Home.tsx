@@ -25,7 +25,7 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { siFacebook, siTiktok } from "simple-icons/icons";
+import { siFacebook, siTiktok, siWhatsapp } from "simple-icons/icons";
 
 const navItems = [
   ["Profile", "profile"],
@@ -267,7 +267,7 @@ export default function Home() {
                 <span className="h-1.5 w-1.5 rounded-full bg-current" />
                 <span className="text-[0.64rem] font-bold uppercase tracking-[0.2em]">{t("Housekeeping operations · Facility services")}</span>
               </div>
-              <h1 className="hero-title-3d max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.065em] text-white">
+              <h1 className="max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.065em] text-white">
                 BHANUBHAKTA <span className="text-[#E5BB63]">KC</span>
               </h1>
               <div className="mt-7 flex max-w-xl items-center gap-3">
@@ -461,6 +461,7 @@ export default function Home() {
             <div><p className="eyebrow section-kicker">{t("06 / Contact")}</p><h2 className="section-title mt-5 max-w-xl">{t("Let’s discuss a stronger standard of operations.")}</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#536772]">{t("Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.")}</p></div>
             <div className="contact-form-shell rounded-[1.35rem] border border-[#CBD7D3] bg-[#FBFCF9] p-5 shadow-[0_18px_36px_rgba(28,58,72,0.08)] sm:p-7">
               <a href="mailto:bhanubhakta622@gmail.com" aria-label="Email Bhanubhakta KC" title="Open your default email application" className="email-direct group flex items-center justify-between gap-4 rounded-xl bg-[#EAF1ED] px-4 py-3 text-[#142B42]"><span className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-lg bg-[#D4A64A] text-[#142B42]"><Mail size={18} /></span><span className="text-[0.7rem] font-extrabold uppercase tracking-[0.14em]">{t("Email Bhanubhakta KC")}</span></span><ArrowUpRight size={17} className="text-[#A37624] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
+              <a href="https://wa.me/971545435736" target="_blank" rel="noreferrer" aria-label="Chat with Bhanubhakta KC on WhatsApp" title="Open WhatsApp" className="whatsapp-direct group mt-3 flex items-center justify-between gap-4 rounded-xl px-4 py-3 text-white"><span className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-lg bg-white text-[#25D366]"><svg aria-label="WhatsApp" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d={siWhatsapp.path} /></svg></span><span className="text-[0.7rem] font-extrabold uppercase tracking-[0.14em]">WhatsApp Bhanubhakta KC</span></span><ArrowUpRight size={17} className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
               <form className="mt-6 grid gap-4" onSubmit={openEmailDraft}>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <label className="contact-field"><span>{t("Name")}</span><input required value={contactForm.name} onChange={(event) => setContactForm({ ...contactForm, name: event.target.value })} placeholder={t("Your name")} /></label>
