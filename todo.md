@@ -131,3 +131,10 @@
 - [x] Remove all scroll-triggered page-flip state, section hooks, and visual overlay rules.
 - [x] Preserve the existing 3D depth styling on the hero, panels, cards, and contact surfaces.
 - [x] Verify the stable transition-free design at desktop and mobile widths.
+
+## 3D hero name and clean contact form
+
+- [x] Add a refined 3D dimensional treatment to the BHANUBHAKTA KC hero name.
+- [x] Replace the visible email address with a clean “Email Bhanubhakta KC” local-email action.
+- [x] Add a clear contact form that opens the visitor’s local email client with their message.
+- [x] Validate the refined hero and contact experience at desktop and mobile widths.

@@ -3,7 +3,7 @@
  * Editorial industrial portfolio: ink navy, warm ivory, and service brass.
  * Layout favors an asymmetric dossier structure, inspection rules, and concise operational language.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -123,6 +123,7 @@ const nepaliCopy: Record<string, string> = {
   "05 / Education": "०५ / शिक्षा", "Academic foundations for practical leadership.": "व्यावहारिक नेतृत्वका लागि शैक्षिक आधार।", "Academic record": "शैक्षिक विवरण", "06 / Contact": "०६ / सम्पर्क",
   "A professional ethic": "व्यावसायिक नैतिकता", "“A clean environment is never accidental. It is the visible result of people, process, and pride working together.”": "“स्वच्छ वातावरण कहिल्यै संयोगले बन्दैन। यो मानिस, प्रक्रिया र गर्वले सँगै काम गरेको देखिने परिणाम हो।”",
   "05 / Contact": "०५ / सम्पर्क", "Let’s discuss a stronger standard of operations.": "अझ बलियो सञ्चालन मापदण्डबारे छलफल गरौँ।", "Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.": "UAE र अन्य स्थानमा हाउसकिपिङ नेतृत्व, सुविधा सञ्चालन र सेवा-गुणस्तरका अवसरबारे सम्पर्क गर्न उपलब्ध।", "Email": "इमेल", "Phone": "फोन", "Location": "स्थान",
+  "Email Bhanubhakta KC": "Bhanubhakta KC लाई इमेल गर्नुहोस्", "Send a message": "सन्देश पठाउनुहोस्", "Name": "नाम", "Your name": "तपाईंको नाम", "Your email": "तपाईंको इमेल", "Subject": "विषय", "What would you like to discuss?": "तपाईं केबारे छलफल गर्न चाहनुहुन्छ?", "Message": "सन्देश", "Write your message": "तपाईंको सन्देश लेख्नुहोस्", "Send email": "इमेल पठाउनुहोस्", "The form opens your local email application.": "यो फारमले तपाईंको स्थानीय इमेल अनुप्रयोग खोल्छ।",
   "Housekeeping Operations": "हाउसकिपिङ सञ्चालन", "All rights reserved.": "सर्वाधिकार सुरक्षित।", "Back to top": "माथि जानुहोस्",
   "Lead daily housekeeping operations, staff allocation, and facility maintenance across the Barakah Nuclear Power Plant project.": "Barakah Nuclear Power Plant परियोजनामा दैनिक हाउसकिपिङ सञ्चालन, कर्मचारी बाँडफाँड र सुविधा मर्मतसम्भारको नेतृत्व।",
   "Enforce high standards of safety, hygiene, and nuclear-security environmental protocols alongside systematic daily inspections.": "प्रणालीगत दैनिक निरीक्षणसँगै सुरक्षा, स्वच्छता र आणविक-सुरक्षा वातावरणीय प्रोटोकलका उच्च मापदण्ड लागू।",
@@ -150,17 +151,15 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-  const [openingContact, setOpeningContact] = useState("");
+  const [contactForm, setContactForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [language, setLanguage] = useState<"en" | "ne">(() => new URLSearchParams(window.location.search).get("lang") === "ne" ? "ne" : "en");
   const t = (copy: string) => language === "ne" ? nepaliCopy[copy] ?? copy : copy;
   const closeMenu = () => setMenuOpen(false);
-  const runContactAction = (event: { preventDefault: () => void }, target: string, card: string) => {
+  const openEmailDraft = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setOpeningContact(card);
-    window.setTimeout(() => {
-      window.location.href = target;
-      setOpeningContact("");
-    }, 220);
+    const subject = contactForm.subject || `Portfolio enquiry from ${contactForm.name}`;
+    const body = `Name: ${contactForm.name}\nEmail: ${contactForm.email}\n\n${contactForm.message}`;
+    window.location.href = `mailto:bhanubhakta622@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   useEffect(() => {
@@ -200,17 +199,6 @@ export default function Home() {
       { rootMargin: "-28% 0px -62% 0px", threshold: 0.01 },
     );
     observedSections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const turnSections = Array.from(document.querySelectorAll<HTMLElement>(".page-turn"));
-    if (!("IntersectionObserver" in window)) return;
-    const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("page-turn-active")),
-      { threshold: 0.52 },
-    );
-    turnSections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
 
@@ -279,7 +267,7 @@ export default function Home() {
                 <span className="h-1.5 w-1.5 rounded-full bg-current" />
                 <span className="text-[0.64rem] font-bold uppercase tracking-[0.2em]">{t("Housekeeping operations · Facility services")}</span>
               </div>
-              <h1 className="max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.065em] text-white">
+              <h1 className="hero-title-3d max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold uppercase leading-[0.92] tracking-[-0.065em] text-white">
                 BHANUBHAKTA <span className="text-[#E5BB63]">KC</span>
               </h1>
               <div className="mt-7 flex max-w-xl items-center gap-3">
@@ -471,10 +459,18 @@ export default function Home() {
         <section id="contact" className="reveal-on-scroll relative bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.5fr_0.5fr] lg:gap-20">
             <div><p className="eyebrow section-kicker">{t("06 / Contact")}</p><h2 className="section-title mt-5 max-w-xl">{t("Let’s discuss a stronger standard of operations.")}</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#536772]">{t("Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.")}</p></div>
-            <div className="contact-wallet border-t-2 border-[#142B42] pt-2">
-              <a href="mailto:bhanubhakta622@gmail.com" onClick={(event) => runContactAction(event, "mailto:bhanubhakta622@gmail.com", "email")} aria-label="Send an email to Bhanubhakta KC" title="Open your default email application" className={`contact-wallet-card group flex items-center gap-4 ${openingContact === "email" ? "is-opening" : ""}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#F3E2B7] text-[#8D661F]"><Mail size={20} /></span><span className="min-w-0 flex-1"><span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">{t("Email")}</span><strong className="mt-1 block break-all font-display text-xl font-normal text-[#142B42] sm:text-2xl">bhanubhakta622@gmail.com</strong></span><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
-              <a href="tel:+971545435736" onClick={(event) => runContactAction(event, "tel:+971545435736", "phone")} aria-label="Call Bhanubhakta KC at +971 54 543 5736" title="Open your phone dialer" className={`contact-wallet-card group flex items-center gap-4 ${openingContact === "phone" ? "is-opening" : ""}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#DCE9E8] text-[#28566B]"><Phone size={20} /></span><span className="flex-1"><span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">{t("Phone")}</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42] sm:text-2xl">+971 54 543 5736</strong></span><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
-              <a href="https://www.google.com/maps/search/?api=1&query=Ghayathi%2C%20Abu%20Dhabi%2C%20UAE" target="_blank" rel="noreferrer" onClick={(event) => runContactAction(event, "https://www.google.com/maps/search/?api=1&query=Ghayathi%2C%20Abu%20Dhabi%2C%20UAE", "location")} aria-label="Open Ghayathi, Abu Dhabi, UAE in maps" className={`contact-wallet-card group flex items-center gap-4 ${openingContact === "location" ? "is-opening" : ""}`}><span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-[#E9E2F0] text-[#66507B]"><MapPin size={20} /></span><span className="flex-1"><span className="block text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">{t("Location")}</span><strong className="mt-1 block font-display text-xl font-normal text-[#142B42] sm:text-2xl">Ghayathi, Abu Dhabi, UAE</strong></span><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+            <div className="contact-form-shell rounded-[1.35rem] border border-[#CBD7D3] bg-[#FBFCF9] p-5 shadow-[0_18px_36px_rgba(28,58,72,0.08)] sm:p-7">
+              <a href="mailto:bhanubhakta622@gmail.com" aria-label="Email Bhanubhakta KC" title="Open your default email application" className="email-direct group flex items-center justify-between gap-4 rounded-xl bg-[#EAF1ED] px-4 py-3 text-[#142B42]"><span className="flex items-center gap-3"><span className="grid h-9 w-9 place-items-center rounded-lg bg-[#D4A64A] text-[#142B42]"><Mail size={18} /></span><span className="text-[0.7rem] font-extrabold uppercase tracking-[0.14em]">{t("Email Bhanubhakta KC")}</span></span><ArrowUpRight size={17} className="text-[#A37624] transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></a>
+              <form className="mt-6 grid gap-4" onSubmit={openEmailDraft}>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <label className="contact-field"><span>{t("Name")}</span><input required value={contactForm.name} onChange={(event) => setContactForm({ ...contactForm, name: event.target.value })} placeholder={t("Your name")} /></label>
+                  <label className="contact-field"><span>{t("Email")}</span><input required type="email" value={contactForm.email} onChange={(event) => setContactForm({ ...contactForm, email: event.target.value })} placeholder={t("Your email")} /></label>
+                </div>
+                <label className="contact-field"><span>{t("Subject")}</span><input value={contactForm.subject} onChange={(event) => setContactForm({ ...contactForm, subject: event.target.value })} placeholder={t("What would you like to discuss?")} /></label>
+                <label className="contact-field"><span>{t("Message")}</span><textarea required rows={4} value={contactForm.message} onChange={(event) => setContactForm({ ...contactForm, message: event.target.value })} placeholder={t("Write your message")} /></label>
+                <button type="submit" className="contact-submit flex items-center justify-center gap-2 rounded-xl bg-[#173A52] px-5 py-3.5 text-[0.68rem] font-extrabold uppercase tracking-[0.15em] text-white transition hover:bg-[#24506B] active:scale-[0.98]">{t("Send email")} <ArrowUpRight size={16} /></button>
+                <p className="text-center text-[0.6rem] font-bold uppercase tracking-[0.13em] text-[#72848B]">{t("The form opens your local email application.")}</p>
+              </form>
             </div>
           </div>
         </section>
