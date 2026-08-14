@@ -60,3 +60,10 @@
 - [x] Improve header background, logo lockup, and visual hierarchy.
 - [x] Rebalance hero text color and overlay for comfortable readability.
 - [x] Verify the revised header and hero at desktop and mobile widths.
+
+## Dynamic header and light footer refinement
+
+- [x] Lighten the footer surface so the supplied BK logo remains clearly visible.
+- [x] Redesign the header with softer corners, refined border depth, and a less stark light surface.
+- [x] Add a translucent scroll-state response to the fixed header.
+- [x] Verify the revised chrome at desktop and mobile widths.

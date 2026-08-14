@@ -111,7 +111,15 @@ function InspectionRule({ label }: { label?: string }) {
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    const updateHeader = () => setScrolled(window.scrollY > 32);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
 
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
@@ -129,8 +137,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F3F0EA] text-[#142B42] selection:bg-[#D4A64A] selection:text-[#142B42]">
-      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
-        <div className="mx-auto flex max-w-[1440px] items-center justify-between border border-[#D8D7D0] bg-[#FAF9F5]/95 px-4 py-2.5 text-[#142B42] shadow-[0_12px_28px_rgba(22,43,58,0.1)] backdrop-blur-md sm:px-5">
+      <header className={`fixed inset-x-0 top-0 z-50 px-3 transition-[padding] duration-300 sm:px-5 ${scrolled ? "pt-2.5 sm:pt-3" : "pt-3 sm:pt-5"}`}>
+        <div className={`mx-auto flex max-w-[1440px] items-center justify-between border px-4 py-2.5 text-[#142B42] backdrop-blur-xl transition-[background-color,border-color,box-shadow,border-radius] duration-300 sm:px-5 ${scrolled ? "rounded-xl border-white/45 bg-[#EEF3EF]/58 shadow-[0_10px_28px_rgba(22,43,58,0.10)]" : "rounded-[1.35rem] border-[#D3DBD5]/90 bg-[#E7EEE9]/82 shadow-[0_16px_34px_rgba(22,43,58,0.12)]"}`}>
           <a href="#top" className="flex items-center" aria-label="Go to top">
             <img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="Bhanubhakta KC logo" className="h-12 w-16 object-contain sm:h-14 sm:w-[5.25rem]" />
           </a>
@@ -158,7 +166,7 @@ export default function Home() {
           </button>
         </div>
         {menuOpen && (
-          <div className="mx-auto max-w-[1440px] border-x border-b border-[#D8D7D0] bg-[#FAF9F5] px-5 py-5 shadow-[0_12px_28px_rgba(22,43,58,0.1)] lg:hidden">
+          <div className={`mx-auto mt-2 max-w-[1440px] rounded-xl border px-5 py-5 backdrop-blur-xl shadow-[0_12px_28px_rgba(22,43,58,0.1)] lg:hidden ${scrolled ? "border-white/45 bg-[#EEF3EF]/80" : "border-[#D3DBD5]/90 bg-[#E7EEE9]/95"}`}>
             <nav className="grid gap-1" aria-label="Mobile navigation">
               {navItems.map(([label, id]) => (
                 <a key={id} href={`#${id}`} onClick={closeMenu} className="flex items-center justify-between border-b border-[#D8D7D0] py-3 text-sm font-bold uppercase tracking-[0.12em] text-[#173A52]">
@@ -376,8 +384,8 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="bg-[#0B1D2E] px-5 py-7 text-[#B6C2C9] sm:px-8 lg:px-12">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-4 text-[0.62rem] font-bold uppercase tracking-[0.14em] sm:flex-row sm:items-center sm:justify-between"><p className="flex items-center gap-3"><img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="BK logo" className="h-9 w-12 object-contain" /> Bhanubhakta KC · Housekeeping Operations</p><p>© 2026 Bhanubhakta KC. All rights reserved.</p><a href="#top" className="flex items-center gap-2 text-[#D4A64A] transition hover:text-[#F2CC79]">Back to top <ArrowUpRight size={14} /></a></div>
+      <footer className="border-t border-[#CDD6D1] bg-[linear-gradient(115deg,#E7EEE9_0%,#F4F1E9_55%,#E4ECE7_100%)] px-5 py-7 text-[#385364] sm:px-8 lg:px-12">
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-4 text-[0.62rem] font-bold uppercase tracking-[0.14em] sm:flex-row sm:items-center sm:justify-between"><p className="flex items-center gap-3"><img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="BK logo" className="h-11 w-16 object-contain" /> Bhanubhakta KC · Housekeeping Operations</p><p>© 2026 Bhanubhakta KC. All rights reserved.</p><a href="#top" className="flex items-center gap-2 text-[#8D661F] transition hover:-translate-y-0.5 hover:text-[#142B42]">Back to top <ArrowUpRight size={14} /></a></div>
       </footer>
     </div>
   );
