@@ -92,3 +92,10 @@
 - [x] Convert email, phone, and location contact options into wallet-style interactive cards.
 - [x] Add a brief expansion/lift interaction before the contact action runs.
 - [x] Verify interaction behavior and responsive layout at desktop and mobile widths.
+
+## English and Nepali language switcher
+
+- [x] Add a visible EN/नेपाली header language switcher with English selected by default.
+- [x] Translate portfolio navigation, headings, explanatory copy, actions, and interface labels into Nepali.
+- [x] Preserve the name, address, social details, and technical terms in their original language.
+- [x] Verify bilingual content, switching behavior, and responsive layout at desktop and mobile widths.
