@@ -140,7 +140,7 @@ export default function Home() {
       <header className={`fixed inset-x-0 top-0 z-50 px-3 transition-[padding] duration-300 sm:px-5 ${scrolled ? "pt-2.5 sm:pt-3" : "pt-3 sm:pt-5"}`}>
         <div className={`mx-auto flex max-w-[1440px] items-center justify-between border px-4 py-2.5 text-[#142B42] backdrop-blur-xl transition-[background-color,border-color,box-shadow,border-radius] duration-300 sm:px-5 ${scrolled ? "rounded-xl border-white/45 bg-[#EEF3EF]/58 shadow-[0_10px_28px_rgba(22,43,58,0.10)]" : "rounded-[1.35rem] border-[#D3DBD5]/90 bg-[#E7EEE9]/82 shadow-[0_16px_34px_rgba(22,43,58,0.12)]"}`}>
           <a href="#top" className="flex items-center" aria-label="Go to top">
-            <img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="Bhanubhakta KC logo" className="h-12 w-16 object-contain sm:h-14 sm:w-[5.25rem]" />
+            <img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="Bhanubhakta KC logo" className="header-logo h-12 w-16 object-contain sm:h-14 sm:w-[5.25rem]" />
           </a>
 
           <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
@@ -202,10 +202,10 @@ export default function Home() {
                 Housekeeping operations leader with experience across high-security facilities and luxury hospitality environments. Focused on reliable standards, practical leadership, continuous learning, and measurable service quality.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a href="#experience" className="group flex items-center justify-center gap-3 rounded-xl bg-[#D4A64A] px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-[#10263C] transition hover:bg-[#F2CC79] active:scale-[0.97]">
+                <a href="#experience" className="hero-action group flex items-center justify-center gap-3 rounded-xl bg-[#D4A64A] px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-[#10263C] transition hover:bg-[#F2CC79] active:scale-[0.97]">
                   View experience <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </a>
-                <a href="/manus-storage/Bhanubhakta_KC_Resume_d682a5d8.pdf" target="_blank" rel="noreferrer" className="group flex items-center justify-center gap-3 rounded-xl border border-white/60 bg-white/10 px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-white transition hover:border-[#F2CC79] hover:bg-white/20 hover:text-[#F2CC79] active:scale-[0.97]">
+                <a href="/manus-storage/Bhanubhakta_KC_Resume_d682a5d8.pdf" target="_blank" rel="noreferrer" className="hero-action group flex items-center justify-center gap-3 rounded-xl border border-white/60 bg-white/10 px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-white transition hover:border-[#F2CC79] hover:bg-white/20 hover:text-[#F2CC79] active:scale-[0.97]">
                   Download résumé <Download size={16} className="transition-transform group-hover:translate-y-0.5" />
                 </a>
               </div>

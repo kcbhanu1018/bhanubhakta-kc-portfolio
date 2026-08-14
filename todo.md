@@ -73,3 +73,9 @@
 - [x] Apply the header’s soft rounded-corner language to cards, panels, buttons, and contact rows.
 - [x] Preserve accessible spacing, readable borders, and a professional visual hierarchy.
 - [x] Verify the rounded system at desktop and mobile widths.
+
+## Hero and logo motion polish
+
+- [x] Add a professional hover-lift response to both hero action buttons.
+- [x] Add a subtle hover animation to the header logo.
+- [x] Preserve reduced-motion accessibility and verify interaction behavior.
