@@ -106,3 +106,9 @@
 - [x] Move Education into its own distinct section rather than keeping it inside Credentials.
 - [x] Preserve English/Nepali language switching for the revised section content.
 - [x] Verify the redesigned section hierarchy at desktop and mobile widths.
+
+## Book page-turn transition
+
+- [x] Add a subtle page-turn visual transition at major section endings.
+- [x] Ensure the transition remains unobtrusive and does not affect content layout or readability.
+- [x] Preserve reduced-motion accessibility and validate the effect at desktop and mobile widths.

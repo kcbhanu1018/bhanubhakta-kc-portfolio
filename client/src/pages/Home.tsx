@@ -200,6 +200,17 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const turnSections = Array.from(document.querySelectorAll<HTMLElement>(".page-turn"));
+    if (!("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("page-turn-active")),
+      { threshold: 0.52 },
+    );
+    turnSections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F3F0EA] text-[#142B42] selection:bg-[#D4A64A] selection:text-[#142B42]">
       <header className={`fixed inset-x-0 top-0 z-50 px-3 transition-[padding] duration-300 sm:px-5 ${scrolled ? "pt-2.5 sm:pt-3" : "pt-3 sm:pt-5"}`}>
@@ -317,7 +328,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="profile" className="reveal-on-scroll relative bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="profile" className="page-turn reveal-on-scroll relative bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:gap-20">
             <div>
               <p className="eyebrow section-kicker">{t("01 / Professional profile")}</p>
@@ -356,7 +367,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="reveal-on-scroll career-record relative px-5 py-20 text-[#142B42] sm:px-8 lg:px-12 lg:py-28">
+        <section id="experience" className="page-turn reveal-on-scroll career-record relative px-5 py-20 text-[#142B42] sm:px-8 lg:px-12 lg:py-28">
           <div className="blueprint-grid absolute inset-0 opacity-25" />
           <div className="relative mx-auto max-w-[1440px]">
             <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20">
@@ -387,7 +398,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="capabilities" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="capabilities" className="page-turn reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
             <div>
               <p className="eyebrow section-kicker">{t("03 / Core capabilities")}</p>
@@ -415,7 +426,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="credentials" className="reveal-on-scroll bg-[#E8E4DA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="credentials" className="page-turn reveal-on-scroll bg-[#E8E4DA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.39fr_0.61fr] lg:gap-20">
             <div>
               <p className="eyebrow section-kicker">{t("04 / Credentials")}</p>
@@ -434,7 +445,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="education" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="education" className="page-turn reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
             <div>
               <p className="eyebrow section-kicker">{t("05 / Education")}</p>
@@ -454,7 +465,7 @@ export default function Home() {
           <div className="relative mx-auto max-w-[1440px]"><div className="max-w-2xl"><p className="eyebrow text-[#D4A64A]">{t("A professional ethic")}</p><blockquote className="mt-6 font-display text-4xl leading-[1.03] tracking-[-0.04em] text-[#F7F4ED] sm:text-5xl lg:text-6xl">{t("“A clean environment is never accidental. It is the visible result of people, process, and pride working together.”")}</blockquote></div></div>
         </section>
 
-        <section id="contact" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="contact" className="page-turn reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.5fr_0.5fr] lg:gap-20">
             <div><p className="eyebrow section-kicker">{t("06 / Contact")}</p><h2 className="section-title mt-5 max-w-xl">{t("Let’s discuss a stronger standard of operations.")}</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#536772]">{t("Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.")}</p></div>
             <div className="contact-wallet border-t-2 border-[#142B42] pt-2">
