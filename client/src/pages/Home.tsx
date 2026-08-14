@@ -3,7 +3,7 @@
  * Editorial industrial portfolio: ink navy, warm ivory, and service brass.
  * Layout favors an asymmetric dossier structure, inspection rules, and concise operational language.
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowDown,
   ArrowUpRight,
@@ -113,12 +113,26 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>(".reveal-on-scroll"));
+    if (!("IntersectionObserver" in window)) {
+      sections.forEach((section) => section.classList.add("is-visible"));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && entry.target.classList.add("is-visible")),
+      { threshold: 0.12 },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#F3F0EA] text-[#142B42] selection:bg-[#D4A64A] selection:text-[#142B42]">
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between border border-white/20 bg-[#173A52]/92 px-4 py-3 text-[#F7F4ED] shadow-[0_18px_40px_rgba(33,65,82,0.18)] backdrop-blur-md sm:px-5">
           <a href="#top" className="flex items-center gap-3" aria-label="Go to top">
-            <img src="/manus-storage/bk-inspection-mark_5c92d9c6.png" alt="BK inspection mark" className="h-10 w-10 object-contain" />
+            <img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="Bhanubhakta KC logo" className="h-12 w-16 object-contain sm:h-14 sm:w-20" />
             <span className="header-signature leading-none">
               <small className="block text-[0.54rem] font-extrabold uppercase tracking-[0.2em] text-[#D4A64A]">Housekeeping operations</small>
               <strong className="mt-1 block font-display text-[1.25rem] font-normal tracking-[-0.02em] text-[#F7F4ED]">Bhanubhakta <i className="text-[#E5BB63]">KC</i></strong>
@@ -165,25 +179,23 @@ export default function Home() {
       </header>
 
       <main id="top">
-        <section className="hero-depth relative min-h-[760px] overflow-hidden pt-28 sm:pt-32 lg:min-h-[820px]">
-          <div className="hero-soft-light absolute -right-28 top-24 h-[34rem] w-[34rem] rounded-full opacity-80 sm:h-[43rem] sm:w-[43rem]" />
-
-          <div className="relative mx-auto grid min-h-[630px] max-w-[1440px] items-end px-5 pb-12 sm:px-8 sm:pb-16 lg:min-h-[690px] lg:grid-cols-[minmax(0,0.67fr)_minmax(350px,0.33fr)] lg:gap-8 lg:px-12 lg:pb-12">
+        <section className="hero-depth relative overflow-hidden pt-28 sm:pt-32">
+          <div className="relative mx-auto grid max-w-[1440px] items-center gap-9 px-5 pb-14 sm:px-8 sm:pb-16 lg:min-h-[650px] lg:grid-cols-[minmax(0,0.56fr)_minmax(360px,0.44fr)] lg:gap-16 lg:px-12 lg:py-16">
             <div className="z-10 max-w-4xl">
-              <div className="mb-7 flex items-center gap-3 text-[#E5BB63]">
-                <span className="h-2 w-2 bg-current" />
-                <span className="text-[0.68rem] font-bold uppercase tracking-[0.22em]">Senior Housekeeping Supervisor</span>
+              <img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="BK logo" className="mb-5 h-16 w-24 object-contain object-left sm:h-20 sm:w-28" />
+              <div className="mb-6 flex items-center gap-3 text-[#E5BB63]">
+                <span className="h-1.5 w-1.5 rounded-full bg-current" />
+                <span className="text-[0.64rem] font-bold uppercase tracking-[0.2em]">Housekeeping operations · Facility services</span>
               </div>
-              <h1 className="hero-name font-display font-normal text-[#F7F4ED]">
-                <span className="hero-name-first block text-[clamp(3.2rem,7.5vw,8.3rem)] leading-[0.84] tracking-[-0.075em]"><b className="font-normal text-[#E5BB63]">B</b>hanubhakta</span>
-                <span className="mt-2 flex items-end gap-4 sm:gap-6"><strong className="hero-name-kc block text-[clamp(4.4rem,9.5vw,9.6rem)] leading-[0.68] tracking-[-0.1em] text-[#E5BB63]">KC</strong><em className="mb-1 border-l border-[#E5BB63]/80 pl-4 text-[0.58rem] not-italic font-extrabold uppercase leading-5 tracking-[0.18em] text-[#DCE7EA] sm:mb-2 sm:text-[0.65rem]">Housekeeping<br />Leadership</em></span>
+              <h1 className="max-w-3xl font-sans text-[clamp(3.15rem,6.5vw,6.75rem)] font-extrabold leading-[0.92] tracking-[-0.065em] text-[#F7F4ED]">
+                Bhanubhakta <span className="text-[#E5BB63]">KC</span>
               </h1>
-              <div className="mt-8 flex max-w-2xl items-center gap-4">
-                <span className="h-[2px] w-10 shrink-0 bg-[#D4A64A]" />
-                <p className="text-[0.66rem] font-extrabold uppercase leading-6 tracking-[0.18em] text-[#DCE7EA] sm:text-[0.72rem]">Order behind every exceptional environment.</p>
+              <div className="mt-7 flex max-w-xl items-center gap-3">
+                <span className="h-px w-10 shrink-0 bg-[#D4A64A]" />
+                <p className="text-[0.62rem] font-bold uppercase leading-5 tracking-[0.16em] text-[#DCE7EA]">Order behind every exceptional environment.</p>
               </div>
-              <p className="mt-7 max-w-xl text-base leading-7 text-[#DCE7EA] sm:text-lg">
-                Leading housekeeping operations for high-security facilities and luxury hospitality spaces, with a focus on quality, safety, and team performance.
+              <p className="mt-6 max-w-xl text-[0.98rem] leading-7 text-[#DCE7EA] sm:text-lg">
+                Housekeeping operations leader with experience across high-security facilities and luxury hospitality environments. Focused on reliable standards, practical leadership, continuous learning, and measurable service quality.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a href="#experience" className="group flex items-center justify-center gap-3 bg-[#D4A64A] px-5 py-3.5 text-[0.7rem] font-extrabold uppercase tracking-[0.15em] text-[#10263C] transition hover:bg-[#F2CC79] active:scale-[0.97]">
@@ -195,15 +207,12 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="relative mt-8 h-[295px] sm:mt-10 sm:h-[390px] lg:mt-0 lg:h-[655px]">
-              <div className="hero-portrait-panel absolute inset-0 overflow-hidden" />
-              <span className="absolute left-5 top-5 z-10 text-[0.58rem] font-extrabold uppercase tracking-[0.18em] text-[#DCE7EA]/80 sm:left-7 sm:top-7">Abu Dhabi · UAE</span>
-              <span className="absolute left-5 top-11 z-10 h-[2px] w-9 bg-[#D4A64A] sm:left-7 sm:top-14" />
-              <img src="/manus-storage/bhanubhakta-kc-portrait_8ebafbda.png" alt="Bhanubhakta KC" className="hero-portrait absolute bottom-0 right-3 z-10 h-[325px] max-w-none object-contain sm:right-7 sm:h-[425px] lg:right-2 lg:h-[650px]" />
-              <div className="absolute bottom-4 left-4 z-20 bg-[#F7F4ED] px-3 py-2 text-[#142B42] shadow-[0_10px_22px_rgba(4,24,38,0.18)] sm:bottom-6 sm:left-6 sm:px-4 sm:py-3">
-                <span className="block text-[0.5rem] font-extrabold uppercase tracking-[0.16em] text-[#8D661F]">Professional record</span>
-                <strong className="mt-1 block font-display text-lg font-normal sm:text-xl">7+ years</strong>
-              </div>
+            <aside className="relative h-[285px] sm:h-[380px] lg:h-[485px]">
+              <figure className="hero-visual-card relative h-full overflow-hidden rounded-2xl border border-white/15 shadow-[0_24px_50px_rgba(4,24,38,0.25)]">
+                <img src="/manus-storage/bhanubhakta-hero_c4e16ab6.jpg" alt="Immaculate premium facility corridor demonstrating operational standards" className="h-full w-full object-cover object-[62%_center]" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,28,44,0.04)_35%,rgba(7,28,44,0.78)_100%)]" />
+                <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5 text-[#F7F4ED] sm:p-6"><span><span className="block text-[0.56rem] font-extrabold uppercase tracking-[0.18em] text-[#E5BB63]">Professional focus</span><span className="mt-1 block font-display text-xl">Standards that stay visible.</span></span><span className="border border-white/30 px-2.5 py-1 text-[0.55rem] font-bold uppercase tracking-[0.15em]">Abu Dhabi</span></figcaption>
+              </figure>
             </aside>
           </div>
         </section>
@@ -236,7 +245,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="profile" className="relative bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="profile" className="reveal-on-scroll relative bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:gap-20">
             <div>
               <p className="eyebrow">01 / Professional profile</p>
@@ -270,12 +279,12 @@ export default function Home() {
 
         <section className="bg-[#E8E4DA] px-5 py-8 sm:px-8 lg:px-12">
           <div className="mx-auto flex max-w-[1440px] flex-col items-start gap-5 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-4"><img src="/manus-storage/bk-inspection-mark_5c92d9c6.png" alt="" className="h-12 w-12 object-contain" /><p className="max-w-xl text-sm leading-6 text-[#415464]">A considered approach to cleanliness, compliance, and continuity across demanding environments.</p></div>
+            <div className="flex items-center gap-4"><img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="Bhanubhakta KC logo" className="h-14 w-20 object-contain" /><p className="max-w-xl text-sm leading-6 text-[#415464]">A considered approach to cleanliness, compliance, and continuity across demanding environments.</p></div>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-[0.63rem] font-bold uppercase tracking-[0.17em] text-[#40566A]"><span>High-security facilities</span><span>Luxury hospitality</span><span>Team leadership</span></div>
           </div>
         </section>
 
-        <section id="experience" className="career-record relative px-5 py-20 text-[#142B42] sm:px-8 lg:px-12 lg:py-28">
+        <section id="experience" className="reveal-on-scroll career-record relative px-5 py-20 text-[#142B42] sm:px-8 lg:px-12 lg:py-28">
           <div className="blueprint-grid absolute inset-0 opacity-25" />
           <div className="relative mx-auto max-w-[1440px]">
             <div className="grid gap-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20">
@@ -306,7 +315,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="capabilities" className="bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="capabilities" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.38fr_0.62fr] lg:gap-20">
             <div>
               <p className="eyebrow">03 / Core capabilities</p>
@@ -334,7 +343,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="credentials" className="bg-[#E8E4DA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="credentials" className="reveal-on-scroll bg-[#E8E4DA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.39fr_0.61fr] lg:gap-20">
             <div>
               <p className="eyebrow">04 / Credentials & education</p>
@@ -366,12 +375,12 @@ export default function Home() {
           <div className="relative mx-auto max-w-[1440px]"><div className="max-w-2xl"><p className="eyebrow text-[#D4A64A]">A professional ethic</p><blockquote className="mt-6 font-display text-4xl leading-[1.03] tracking-[-0.04em] text-[#F7F4ED] sm:text-5xl lg:text-6xl">“A clean environment is never accidental. It is the visible result of people, process, and pride working together.”</blockquote></div></div>
         </section>
 
-        <section id="contact" className="bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
+        <section id="contact" className="reveal-on-scroll bg-[#F3F0EA] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
           <div className="mx-auto grid max-w-[1440px] gap-10 lg:grid-cols-[0.5fr_0.5fr] lg:gap-20">
             <div><p className="eyebrow">05 / Contact</p><h2 className="section-title mt-5 max-w-xl">Let’s discuss a stronger standard of operations.</h2><p className="mt-7 max-w-lg text-base leading-7 text-[#536772]">Available to connect regarding housekeeping leadership, facilities operations, and service-quality opportunities in the UAE and beyond.</p></div>
             <div className="border-t-2 border-[#142B42]">
-              <a href="mailto:bhanubhakta622@gmail.com" className="group flex items-center gap-4 border-b border-[#BFC7C6] py-6 transition hover:bg-[#E8E4DA] sm:px-2"><Mail size={22} className="text-[#A37624]" /><div className="min-w-0 flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Email</p><p className="mt-1 break-all font-display text-xl text-[#142B42] sm:text-2xl">bhanubhakta622@gmail.com</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
-              <a href="tel:+971545435736" className="group flex items-center gap-4 border-b border-[#BFC7C6] py-6 transition hover:bg-[#E8E4DA] sm:px-2"><Phone size={22} className="text-[#A37624]" /><div className="flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Phone</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">+971 54 543 5736</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+              <a href="mailto:bhanubhakta622@gmail.com" aria-label="Send an email to Bhanubhakta KC" title="Open your default email application" className="contact-action group flex items-center gap-4 border-b border-[#BFC7C6] py-6 transition hover:bg-[#E8E4DA] sm:px-2"><Mail size={22} className="text-[#A37624]" /><div className="min-w-0 flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Email</p><p className="mt-1 break-all font-display text-xl text-[#142B42] sm:text-2xl">bhanubhakta622@gmail.com</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+              <a href="tel:+971545435736" aria-label="Call Bhanubhakta KC at +971 54 543 5736" title="Open your phone dialer" className="contact-action group flex items-center gap-4 border-b border-[#BFC7C6] py-6 transition hover:bg-[#E8E4DA] sm:px-2"><Phone size={22} className="text-[#A37624]" /><div className="flex-1"><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Phone</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">+971 54 543 5736</p></div><ArrowUpRight className="shrink-0 text-[#A37624] transition group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
               <div className="flex items-center gap-4 border-b border-[#BFC7C6] py-6 sm:px-2"><MapPin size={22} className="text-[#A37624]" /><div><p className="text-[0.6rem] font-bold uppercase tracking-[0.16em] text-[#6A7A81]">Location</p><p className="mt-1 font-display text-xl text-[#142B42] sm:text-2xl">Ghayathi, Abu Dhabi, UAE</p></div></div>
             </div>
           </div>
@@ -379,7 +388,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-[#0B1D2E] px-5 py-7 text-[#B6C2C9] sm:px-8 lg:px-12">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-4 text-[0.62rem] font-bold uppercase tracking-[0.14em] sm:flex-row sm:items-center sm:justify-between"><p className="flex items-center gap-2"><BadgeCheck size={15} className="text-[#D4A64A]" /> Bhanubhakta KC · Housekeeping Operations</p><p>© {new Date().getFullYear()} · Abu Dhabi, UAE</p><a href="#top" className="flex items-center gap-2 text-[#D4A64A] transition hover:text-[#F2CC79]">Back to top <ArrowUpRight size={14} /></a></div>
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-4 text-[0.62rem] font-bold uppercase tracking-[0.14em] sm:flex-row sm:items-center sm:justify-between"><p className="flex items-center gap-3"><img src="/manus-storage/bhanubhakta-kc-logo_72579765.png" alt="BK logo" className="h-9 w-12 object-contain" /> Bhanubhakta KC · Housekeeping Operations</p><p>© 2026 Bhanubhakta KC. All rights reserved.</p><a href="#top" className="flex items-center gap-2 text-[#D4A64A] transition hover:text-[#F2CC79]">Back to top <ArrowUpRight size={14} /></a></div>
       </footer>
     </div>
   );

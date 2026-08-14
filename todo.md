@@ -43,3 +43,12 @@
 - [x] Create a more distinctive custom name treatment for “Bhanubhakta KC”.
 - [x] Recompose the portrait and hero content for a professional tablet and mobile experience.
 - [x] Validate the redesigned hero at desktop, tablet, and mobile widths.
+
+## Final clean refinement
+
+- [x] Replace the existing mark with the user’s supplied BK logo throughout the brand system.
+- [x] Remove the portrait from the hero and use the facility-operations visual instead.
+- [x] Simplify the hero into a clean professional personal-brand layout.
+- [x] Confirm direct phone dial and default-email actions from contact links.
+- [x] Add restrained hover and section-reveal animation without visual clutter.
+- [x] Review the final experience at desktop, tablet, and mobile widths.
